@@ -5,10 +5,8 @@ import * as monaco from 'monaco-editor';
 import { marked } from 'marked';
 import files from './assets/plantillas.json';
 import snippets_basales from './components/snippets_basales';
-// files as js object
 
-
-function SeleccionPlantillas(setSelectedFile) {
+function SeleccionPlantillas({ setSelectedFile }) {
   const [path, setPath] = useState(''); // State to store the selected file path
 
   async function fetchMd(uri) {
@@ -32,8 +30,9 @@ function SeleccionPlantillas(setSelectedFile) {
         defaultValue="Selecciona una plantilla"
         onChange={(e) => {
           const selectedValue = e.target.value;
-          setPath(`./plantillas/${selectedValue}`); // Update path based on selection
-          fetchMd(path); // Fetch content based on updated path
+          const newPath = `./plantillas/${selectedValue}`; // Update path based on selection
+          setPath(newPath);
+          fetchMd(newPath); // Fetch content based on updated path
         }}
       >
         <option value="Selecciona una plantilla" disabled>
@@ -50,18 +49,16 @@ function SeleccionPlantillas(setSelectedFile) {
 }
 
 function App() {
- 
   const [contenido, setContenido] = useState('');
   const [md, setMd] = useState('');
   const [snippets, setSnippets] = useState({});
-  
 
   useEffect(() => {
     // Fetch snippets on mount
     const fetchSnippets = async () => {
       try {
         const data = await loadGoogleSheet();
-        setSnippets(data);
+        setSnippets((prevSnippets) => ({ ...prevSnippets, ...data, ...snippets_basales }));
         console.log('snippets loaded');
       } catch (error) {
         console.error('Error loading Google Sheet:', error);
@@ -72,12 +69,6 @@ function App() {
   }, []);
 
   useEffect(() => {
-    // Update snippets when snippetsBasales changes
-    setSnippets(prevSnippets => ({ ...prevSnippets, ...snippets_basales }));
-  }, [snippets_basales]);
-
-  useEffect(() => {
-    // Register completion items when snippets change
     if (monaco) {
       monaco.languages.registerCompletionItemProvider('markdown', {
         provideCompletionItems: (model, position) => {
@@ -97,13 +88,10 @@ function App() {
       });
     }
   }, [snippets]);
-  // when seleccion plantilla changes, update md
 
- // Empty array means this effect runs once on mount
+ 
 
-
-
-  
+  console.log('snippets', snippets);
   const myTheme = {
     base: 'vs-dark',
     inherit: true,
@@ -134,33 +122,37 @@ function App() {
 
   const handleEditorChange = (value, event) => {
     setContenido(marked(value)); // convert markdown to HTML and update state
-    // 
-  };
-  const onMount = (editor, monaco ) => {
+    // display suggestions
 
+  };
+
+  const onMount = (editor, monaco) => {
     monaco.editor.defineTheme('myTheme', myTheme);
-    monaco.editor.setTheme('myTheme'); 
+    monaco.editor.setTheme('myTheme');
     editor.focus();
-    setContenido(marked(editor.getValue())); // convert markdown to HTML and update state
-    
-    
-
-    /* registerSnippets();
-    console.log("snippet is registered");
-    console.log(monaco.languages.getLanguages()); */
-    
+    setContenido(marked(editor.getValue()));
+    monaco.languages.registerCompletionItemProvider('markdown', {
+      provideCompletionItems: (model, position) => {
+        const suggestions = [];
+        for (const [key, value] of Object.entries(snippets)) {
+          suggestions.push({
+            label: key,
+            kind: value.kind,
+            insertText: value.insertText,
+            insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
+            detail: value.detail,
+            documentation: value.description,
+          });
+        }
+        return { suggestions };
+      },
+    });
   };
-  
-
-
 
   return (
-    <div className="App" style={{display: 'flex', flexDirection: 'column', flexWrap: 'wrap'}}>
-
-      <SeleccionPlantillas/>
-      <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', 
-        width: '100vw', height: 'auto', padding: '0px', margin: '0px'
-      }}>
+    <div className="App" style={{ display: 'flex', flexDirection: 'column', flexWrap: 'wrap' }}>
+      <SeleccionPlantillas setSelectedFile={setMd} />
+      <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', width: '100vw', height: 'auto', padding: '0px', margin: '0px' }}>
         <Editor
           height='calc(100vh - 40px)'
           padding='0px'
@@ -173,65 +165,54 @@ function App() {
           value={md}
           options={{
             wordWrap: 'on',
-            
+            suggestOnTriggerCharacters: true,
           }}
         />
         {/* Preview of Editor markdown */}
-          <div style={{
-            height: 'calc(100vh - 40px)', 
-            width: '50vw', 
-            backgroundColor: 'white', 
-            padding: '0px', 
-            overflow: 'auto'}}>
-            <div dangerouslySetInnerHTML={{__html: contenido}}></div>
-          </div>
+        <div style={{ height: 'calc(100vh - 40px)', width: '50vw', backgroundColor: 'white', padding: '0px', overflow: 'auto', 
+        color: 'black', fontSize: '16px', fontFamily: 'Arial', textAlign: 'left'
+         }}>
+          <div dangerouslySetInnerHTML={{ __html: contenido }}></div>
+        </div>
       </div>
     </div>
   );
 }
 
-
-
-async function loadGoogleSheet(){
-  
+async function loadGoogleSheet() {
   let SHEET_ID = '1AjQ6IRZ9fdw13qizrCzGtR3QFeZb6nq2KYms-wJ8Puc';
   let SHEET_TITLE = 'atajos';
   let SHEET_RANGE = 'A1:C100'
   let FULL_URL = ('https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/gviz/tq?sheet=' + SHEET_TITLE + '&range=' + SHEET_RANGE);
   console.log('hola desde el loadGoogleSheet');
-  fetch(FULL_URL)
-  .then(res => res.text())
-  .then(rep => {
-      let data = JSON.parse(rep.substr(47).slice(0,-2));
-      let snippets_sheets = data.table.rows;
-      console.log(snippets_sheets);
-      
+  
+  try {
+    const res = await fetch(FULL_URL);
+    const rep = await res.text();
+    const data = JSON.parse(rep.substr(47).slice(0, -2));
+    const snippets_sheets = data.table.rows;
+    console.log(snippets_sheets);
 
-      // fix snippets object to have the form:
-      // 'nombre_first google sheets col': {
-      //   kind: monaco.languages.CompletionItemKind.Snippet,
-      //   insertText: 'texto_second google sheets col',
-      //   detail: 'detalle_third google sheets col',
-      //  },
+    let snippets_sheets_def = {};
 
-      let snippets_sheets_def = {};
-
-      for (let i = 1; i < snippets_sheets.length; i++) {
-        const element = snippets_sheets[i].c;
-        const nombre = element[0].v;
-        const texto = element[1].v;
-        const detalle = element[2].v;
-        snippets_sheets_def[nombre] = {
-          kind: monaco.languages.CompletionItemKind.Snippet,
-          insertText: texto,
-          detail: detalle,
-        }
-      }
-      console.log(snippets_sheets_def);
-      return snippets_sheets_def;
-    }).catch (error => console.error('Error fetching Google Sheet:', error));
-      
+    for (let i = 1; i < snippets_sheets.length; i++) {
+      const element = snippets_sheets[i].c;
+      const nombre = element[0].v;
+      const texto = element[1].v;
+      const detalle = element[2].v;
+      snippets_sheets_def[nombre] = {
+        kind: monaco.languages.CompletionItemKind.Snippet,
+        insertText: texto,
+        detail: detalle,
+      };
+    }
+    console.log(snippets_sheets_def);
+    console.log('snippets_sheets_def');
+    return snippets_sheets_def;
+  } catch (error) {
+    console.error('Error fetching Google Sheet:', error);
+    return {}; // Return an empty object in case of error
+  }
 }
-
 
 export default App;
