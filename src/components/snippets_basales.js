@@ -1,6 +1,6 @@
 import * as monaco from 'monaco-editor'; // library to use monaco editor
 
-const snippets = {
+const snippets_basales = {
     // Diagnósticos obste
     'dg_ingreso_egreso_gine': {
         kind: monaco.languages.CompletionItemKind.Snippet,
@@ -243,4 +243,4 @@ const snippets = {
     }
   };
 
-export default snippets;
+export default snippets_basales;
