@@ -1,0 +1,123 @@
+{
+    "dg_ingreso_egreso_gine": {
+        "kind": "Snippet",
+        "insertText": [
+            "## Diagnósticos ingreso:",
+            "1. ${1:Multípara de} ${2:num}, ${3:edad} años",
+            "2. Embarazo de ${4:num} semanas por FUR${5:op}",
+            "3. Trabajo de parto fase ${6:activa}",
+            "4. IMC ${7:num}",
+            "5. Riesgo tromboembólico ${8:num}",
+            "",
+            "## Diagnósticos egreso:",
+            "1. ${9:Multípara de} ${10:num}, ${3:edad} años",
+            "2. Puérpera ${11:2} días ${12:parto vaginal/cesárea}"
+        ],
+        "detail": "Diagnósticos ingreso y egreso"
+    },
+    "multípara": {
+        "kind": "Snippet",
+        "insertText": "multípara de ${1:num}",
+        "detail": "Multípara"
+    },
+    "primípara": {
+        "kind": "Snippet",
+        "insertText": "primípara",
+        "detail": "Primípara"
+    },
+    "nulípara": {
+        "kind": "Snippet",
+        "insertText": "nulípara",
+        "detail": "Nulípara"
+    },
+    "contracciones_utrinas": {
+        "kind": "Snippet",
+        "insertText": "contracciones uterinas dolorosas ${1:cantidad y otros síntomas}",
+        "detail": "Contracciones uterinas"
+    },
+    "dilatación_cervical": {
+        "kind": "Snippet",
+        "insertText": "dilatación cervical ${1:num} cm, borramiento ${2:num}%, centrado",
+        "detail": "Dilatación cervical"
+    },
+    "trabajo_parto": {
+        "kind": "Snippet",
+        "insertText": "trabajo de parto en fase ${1:activa}",
+        "detail": "Trabajo de parto"
+    },
+    "dolor_abdominal": {
+        "kind": "Snippet",
+        "insertText": "dolor abdominal ${1:localización y características}, intensidad ${2:num}",
+        "detail": "Dolor abdominal"
+    },
+    "sangrado_genital": {
+        "kind": "Snippet",
+        "insertText": "sangrado genital ${1:características}",
+        "detail": "Sangrado genital"
+    },
+    "movimientos_fetales": {
+        "kind": "Snippet",
+        "insertText": "movimientos fetales ${1:num}",
+        "detail": "Movimientos fetales"
+    },
+    "nauseas_vomitos": {
+        "kind": "Snippet",
+        "insertText": "náuseas ${1:y} vómitos${2}",
+        "detail": "Náuseas y vómitos"
+    },
+    "sin_otras_complicaciones": {
+        "kind": "Snippet",
+        "insertText": "sin otras complicaciones",
+        "detail": "Sin otras complicaciones"
+    },
+    "parto_vaginal": {
+        "kind": "Snippet",
+        "insertText": [
+            "- Parto vaginal espontáneo (${1:fecha} a las ${2:hora}), sin complicaciones. PN: ${3:num} g, Talla ${4:num} cm, APGAR ${5:num}-${6:num}"
+        ],
+        "detail": "Parto PTVE"
+    },
+    "cesarea": {
+        "kind": "Snippet",
+        "insertText": [
+            "- Cesárea (${1:fecha} a las ${2:hora}), sin complicaciones. PN: ${3:num} g, Talla ${4:num} cm, APGAR ${5:num}-${6:num}"
+        ],
+        "detail": "Cesárea"
+    },
+    "ex_hemograma": {
+        "kind": "Snippet",
+        "insertText": "Hb ${1:num}, Leucocitos ${2:num}, Plaquetas ${3:num}",
+        "description": "Examen hemograma",
+        "detail": "Hemograma"
+    },
+    "ex_coagulacion": {
+        "kind": "Snippet",
+        "insertText": "INR ${1:num}, TP ${2:num}%, TTPK ${3:num}s",
+        "description": "Examen coagulación",
+        "detail": "Coagulación"
+    },
+    "ex_hepatico": {
+        "kind": "Snippet",
+        "insertText": "GOT ${1:num}, GPT ${2:num}, BT ${3:num}, BD ${4:num}, GGT ${5:num}, FA ${6:num}",
+        "description": "Examen hepático",
+        "detail": "Hepático"
+    },
+    "ex_función_renal": {
+        "kind": "Snippet",
+        "insertText": "Creatinina ${1:num}, BUN ${2:num}",
+        "description": "Examen función renal",
+        "detail": "Función renal"
+    },
+    "ex_registro_basal_no_estresante": {
+        "kind": "Snippet",
+        "insertText": "Registro basal no estresante: ${1:reactivo}",
+        "description": "Examen registro basal no estresante",
+        "detail": "Registro basal no estresante"
+    },
+    "ex_ecografia": {
+        "kind": "Snippet",
+        "insertText": "Ecografía: ${1:gestación única viva, presentación cefálica, líquido amniótico normal, placenta anterior}",
+        "description": "Examen ecografía",
+        "detail": "Ecografía"
+    }
+}
