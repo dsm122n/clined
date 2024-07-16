@@ -55,77 +55,19 @@ function SeleccionPlantillas({ setSelectedFile }) {
 let snippetsGlobal = {};
 function Autocompletado({snippetsPrev, actualizarState, monacoEditor}){
   const autocompletadoRef = useRef("https://docs.google.com/spreadsheets/d/1AjQ6IRZ9fdw13qizrCzGtR3QFeZb6nq2KYms-wJ8Puc/edit?gid=0#gid=0");
-  const snippetsRef = useRef(snippetsPrev);
-  const [snippets, setSnippets] = useState(snippetsPrev);
 
-  const handleClickToUpdate = async () => {
-    try {
-    const autocompletado_url = document.getElementById('autocompletado-url').value;
-    console.log('autocompletado_url', autocompletado_url);
-
-    const snippetsSheetsDef = await updateAutocompletado(autocompletado_url);
-
-    console.log('snippetsSheetsDef', snippetsSheetsDef);
-    let snippetsActualizados = {...snippetsPrev, ...snippetsSheetsDef};
-    console.log('snippetsActualizados', snippetsActualizados);
-    setSnippets(snippetsActualizados);
-    snippetsRef.current = snippetsActualizados;
-    snippetsGlobal = snippetsActualizados;
-    actualizarState(snippetsActualizados);
-    try {
-      return App().onMount();
-      //monaco.languages.registerCompletionItemProvider('markdown', {
-  //
-      //  // triggerCharacters: ['.'], // Trigger snippet on dot (can be customized)
-      //  provideCompletionItems: (model, position) => {
-      //    console.log('inside registerCompletionItemProvider');
-      //    const suggestions = [];
-      //    for (const [key, value] of Object.entries(snippetsActualizados)) {
-      //      suggestions.push({
-      //        label: key,
-      //        kind: value.kind,
-      //        insertText: value.insertText,
-      //        insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
-      //        detail: value.detail,
-      //        documentation: value.description
-      //      });
-      //      return { suggestions: suggestions };
-      //    }
-      //    console.log('suggestions', suggestions);
-      //  }
-     // }
-    //);
-  } catch (error) {
-    console.error('Error loading snippets:', error);
-  }
-  }
-  catch (error) {
-    console.error('Error loading snippets:', error);
-      
-    }
-  };
+  
   return(
-    <div style={{ height: '40px', padding: '5px', margin: '0px' }}>
+
       <input style={{
               width: '400px',
               height: '30px',
               fontSize: '16px',
-              margin: '0px',
+              margin: '10px',
               padding: '0px',
                }} 
               type="url" name="autocompletado" id="autocompletado-url" defaultValue={autocompletadoRef.current} />
-      <button style={{
-                width: '30px',
-                height: '30px',
-                fontSize: '16px',
-                margin: '5px',
-                padding: '0px',
-                }} 
-                type="button"
-                onClick={handleClickToUpdate}
-          
-                >✨</button>
-    </div>
+
   );
 }
 
@@ -282,9 +224,20 @@ function App() {
   const [md, setMd] = useState('');
   const [snippets, setSnippets] = useState({});
   const snippetsRef = useRef(snippets);
-  let sinHooks = '';
+  let sinHooks = {};
+  const urlRef = useRef('https://docs.google.com/spreadsheets/d/1AjQ6IRZ9fdw13qizrCzGtR3QFeZb6nq2KYms-wJ8Puc/edit?gid=0#gid=0');
+  const [url, setUrl] = useState('https://docs.google.com/spreadsheets/d/1AjQ6IRZ9fdw13qizrCzGtR3QFeZb6nq2KYms-wJ8Puc/edit?gid=0#gid=0');
 
+  const [i, setI] = useState(true);
+  const iRef = useRef(i);
+  const [seed, setSeed] = useState(1);
 
+  const reset = () => {
+      urlRef.current = document.getElementById('autocompletado-url').value;
+      setUrl(document.getElementById('autocompletado-url').value);
+      setSeed(Math.random());
+      document.getElementById('reset-button').disabled = true;
+   }
   
 
   document.addEventListener('keydown', (event) => {
@@ -347,21 +300,26 @@ function App() {
     monaco.editor.defineTheme('myTheme', myTheme);
     monaco.editor.setTheme('myTheme');
     editor.focus();
+    
+    //delete completionprovider memory from monaco
     setContenido(marked(editor.getValue()));
     const fetchSnippets = async () => {
       try {
-        const data = await loadGoogleSheet();
+        sinHooks = {};
+        const data = await loadGoogleSheet(urlRef.current);
         sinHooks = data;
         /* bind data with snippets_basales objetc */
-        sinHooks = {...sinHooks, ...snippets_basales};   
+        sinHooks = { ...sinHooks, ...snippets_basales};   
         setSnippets(sinHooks);
         snippetsRef.current = sinHooks;
-
+        console.log('sinHooks', sinHooks);
             try {
               // update snippets
               return monaco.languages.registerCompletionItemProvider('markdown', {
                 // triggerCharacters: ['.'], // Trigger snippet on dot (can be customized)
                 provideCompletionItems: (model, position) => {
+                  //delete completionprovider memory from monaco
+
                   console.log('inside registerCompletionItemProvider');
                   const suggestions = [];
                   for (const [key, value] of Object.entries(sinHooks)) {
@@ -395,13 +353,16 @@ function App() {
 
     
   };
-
   return (
     <div className="App" style={{ display: 'flex', flexDirection: 'column', flexWrap: 'wrap'}}>
-      
+
       <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
         <SeleccionPlantillas setSelectedFile={setMd} />
         <Autocompletado snippetsPrev={snippetsRef.current} actualizarState={setSnippets} monacoEditor={monaco}/>
+        <button onClick={reset} id="reset-button"
+          style={{ width: 'fit-content', height: '30px', fontSize: '16px', margin: '10px', padding: '0px' }}
+        >✨</button>
+
         <SnippetsTable snippets={snippetsRef.current} />
         {/* button to show SnippetsTable */}
         <button
@@ -425,7 +386,9 @@ function App() {
         </button>
       </div>
       <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', width: '100vw', height: 'auto', padding: '0px', margin: '0px' }}>
-        <Editor
+        { i ? 
+        (
+          <Editor
           height='calc(100vh - 40px)'
           padding='0px'
           margin='0px'
@@ -435,6 +398,9 @@ function App() {
           onMount={onMount}
           onChange={handleEditorChange}
           value={md}
+          // before unmount or dispose editor
+          key={seed}
+          
           options={{
             wordWrap: 'on',
             suggestOnTriggerCharacters: true,
@@ -444,6 +410,12 @@ function App() {
             {{snippetsPreventQuickSuggestions: false}}
        
         />
+        ):(
+          <p>Hola Mundo</p>
+        )
+
+        }
+       
         {/* Preview of Editor markdown */}
         <div style={{ height: 'calc(100vh - 40px)', width: '50vw', backgroundColor: 'white', padding: '0px', overflow: 'auto', 
         color: 'black', fontSize: '16px', fontFamily: 'Arial', textAlign: 'left'
@@ -455,12 +427,25 @@ function App() {
   );
 }
 
-async function loadGoogleSheet() {
-  let SHEET_ID = '1AjQ6IRZ9fdw13qizrCzGtR3QFeZb6nq2KYms-wJ8Puc';
+async function loadGoogleSheet(url) {
+  let fullString = url;
+  const conector = '/gviz/tq?sheet=';
+  let SHEET_TITLE = 'atajos';
+  const conector2 = '&range=';
+  let SHEET_RANGE = 'A1:C200';
+
+  let [urlSimple, params] = fullString.split('/edit?');
+
+  let FULL_URL = (urlSimple + conector + SHEET_TITLE + conector2 + SHEET_RANGE);
+  console.log('FULL_URL', FULL_URL);
+
+  console.log('hola desde el updateAutocompletado');
+
+  /* let SHEET_ID = '1AjQ6IRZ9fdw13qizrCzGtR3QFeZb6nq2KYms-wJ8Puc';
   let SHEET_TITLE = 'atajos';
   let SHEET_RANGE = 'A1:C100'
   let FULL_URL = ('https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/gviz/tq?sheet=' + SHEET_TITLE + '&range=' + SHEET_RANGE);
-  console.log('hola desde el loadGoogleSheet');
+  console.log('hola desde el loadGoogleSheet'); */
   
   try {
     const res = await fetch(FULL_URL);
