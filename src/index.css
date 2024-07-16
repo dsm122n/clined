@@ -88,7 +88,9 @@ td{
 }
 
 strong{
-  color: #886127;
+  color: #1b759b;
+  font-weight: 600;
+
 }
 p{
   text-align: justify;
@@ -100,4 +102,17 @@ span.highlight{
   padding: 0.2em 0.3em;
   margin: 0.2em 0em;
   border-radius: 10px;
+}
+
+/* add transition */
+
+#buy-me-a-coffee:hover {
+  border-radius: 5px;
+  border: 1px solid #646cff;
+  height: 38px !important;
+  /* center in y axis */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
 }
