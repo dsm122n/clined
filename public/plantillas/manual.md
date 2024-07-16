@@ -5,6 +5,8 @@ style="display: flex; justify-content: center; align-items: center; text-decorat
 
 # Cómo usar ClinEd
 
+[Para ver una demo de las carácterísticas revisa este video](https://youtu.be/bc3fQsSEIjw)
+
 Este editor de texto utiliza monaco-editor que tiene una serie de características y propiedades que facilitan la escritura.
 
 En la mitad izquierda de la pantalla se encuentra el editor de texto, en la mitad derecha se encuentra la **VISTA PREVIA CON FORMATO**. Pulsa cualquier tecla (ej: 'espacio') en algun lugar del editor para que se desplegue la vista previa
@@ -137,3 +139,6 @@ Para conocer los autocompletados puede presionar **alt+i** o **ctrl+space** en c
 
 <a href="https://www.buymeacoffee.com/sanmartindx" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-blue.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
+# Interesado en el código? 
+
+[Aquí el código para vuestra disposición](https://github.com/dsm122n/clined)
