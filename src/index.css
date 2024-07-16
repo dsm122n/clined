@@ -75,3 +75,29 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+table, th{
+  border: 1px solid;
+  border-collapse: collapse;
+  align-items: center;
+}
+td{
+  border-left: 1px solid;
+  border-right: 1px solid;
+  padding: 7.5px;
+}
+
+strong{
+  color: #886127;
+}
+p{
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+span.highlight{
+  background-color: #80724a78;
+  padding: 0.2em 0.3em;
+  margin: 0.2em 0em;
+  border-radius: 10px;
+}

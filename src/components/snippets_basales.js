@@ -5,13 +5,12 @@ const snippets_basales = {
     'dg_ingreso_egreso_gine': {
         kind: monaco.languages.CompletionItemKind.Snippet,
         insertText: [
-            '## Diagnósticos ingreso:',
+            `## Diagnósticos ingreso:`,
             '1. ${1:Multípara de} ${2:num}, ${3:edad} años',
             '2. Embarazo de ${4:num} semanas por FUR${5:op}',
             '3. Trabajo de parto fase ${6:activa}',
             '4. IMC ${7:num}',
             '5. Riesgo tromboembólico ${8:num}',
-            '',
             '## Diagnósticos egreso:',
             '1. ${9:Multípara de} ${10:num}, ${3:edad} años',
             '2. Puérpera ${11:2} días ${12:parto vaginal/cesárea}',
