@@ -498,7 +498,44 @@ const snippets_basales = {
         insertText: "Consultar en urgencias en caso de síntomas de alarma tales como: ${1:dolor abdominal que no cede con analgesia, sangrado genital abundante, fiebre, dificultad respiratoria, u otros síntomas que estime deban recibir atención médica de urgencias}.",
         "description": "Indicación de consulta en urgencias",
         detail: "Consulta sos en urgencias"
+    },
+    "remota_pediatria":
+    {
+        kind: monaco.languages.CompletionItemKind.Snippet,
+        insertText: `
+
+Antecedentes:
+- Perinatales: embarazo controlado, parto \${1:vaginal/cesárea}, RNT \${2:38} semanas, PN \${3:nn} g TN \${4:nn} cm, sin patología perinatal.
+- Mórbidos: (-)
+- Hospitalizaciones: (-)
+- Medicamentos: (-)
+- Quirúrgicos: (-)
+- Alergias: (-)
+- Vacunas: PNI al día, Covid-19 (+), Influenza 2023 (+)
+`,
+        detail: "Anamnesis remota pediatría"
+    },
+    "ex_fisico_pediatria":
+    {
+        kind: monaco.languages.CompletionItemKind.Snippet,
+        insertText: `
+Examen físico:
+- \${1:Consciente, orientado, cooperador, reactivo al medio}, llenado capilar < 2 segundos
+- T° \${2:num}°C, FC \${3:num} lpm, FR \${4:num} rpm, SatO2 \${5:num}%
+- Mucosas rosadas e hidratadas, signo del pliegue (-), ojos no hundidos, llanto con lagrimas. Faringe y amigdalas no eritematosas. 
+- Oído: CAE sin eritema ni secreción. Tímpano claro, no abombado, sin perforación
+- Fontanela anterior normotensa, no abombada, no deprimida.
+- Cuello: no palpo adenopatías
+- Torax simétrico sin retracciones.
+- Cardiopulmonar: MP (+) sin ruidos agregados, RR2T no ausculto soplos
+- Abdomen: RHA(+). Blando, depresible, no doloroso, no palpo masas ni visceromegalias. Blumberg (-). 
+- EEII: sin edema, pulsos palpables simétricos.
+- Piel y faneras: 
+- Neurológico: 
+`,
+        detail: "Examen físico pediatría"
     }
+
 
   };
 
