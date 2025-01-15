@@ -534,6 +534,34 @@ Examen físico:
 - Neurológico: 
 `,
         detail: "Examen físico pediatría"
+    }, 
+    "certificado_salud" : {
+        kind: monaco.languages.CompletionItemKind.Snippet,
+        insertText: `CERTIFICADO DE SALUD
+
+Dr. Daniel Arturo San Martín Martínez
+Médico Cirujano
+Registro Nacional: 861577
+Dirección: CESFAM Los Bajos de San Agustín, Av. Calera de Tango Paradero 13, Calera de Tango, Santiago
+
+A quien corresponda:
+
+Por medio de la presente, certifico que \${1:el(la) Sr(a). [Nombre completo del paciente]}, RUT \${2:[Número de identificación]}, ha sido evaluado(a) en consulta médica el día \${3:fecha de evaluación}.
+
+Tras la revisión de sus antecedentes clínicos y la realización de un examen físico completo, se concluye que el(la) paciente se encuentra \${4:en óptimas condiciones de salud, sin evidencias de patologías que puedan comprometer su desempeño profesional}.
+
+Esta certificación se emite a solicitud del interesado(a) para ser presentada para los fines que estime conveniente.
+
+Sin otro particular, quedo a disposición para cualquier consulta adicional.
+
+Atentamente,
+
+Dr. Daniel Arturo San Martín Martínez
+Médico-Cirujano
+Registro Nacional: 861577
+dasanmartinm@gmail.com
+`,
+        detail: "Certificado de salud"
     }
 
 
