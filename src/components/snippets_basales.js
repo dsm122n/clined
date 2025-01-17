@@ -562,7 +562,75 @@ Registro Nacional: 861577
 dasanmartinm@gmail.com
 `,
         detail: "Certificado de salud"
+    },
+    "control_cv": {
+        kind: monaco.languages.CompletionItemKind.Snippet,
+        insertText: `PLANTILLA CONTROL CARDIOVASCULAR 
+Paciente de \${1:edad} años acude a control CV con resultado de exámenes.
+
+---------------------ÚLTIMOS CONTROLES---------------	
+Med:
+Nut:   
+Enf: 
+
+
+-------------------------ANTECEDENTES------------------
+- AM: DM2 (\${2:+}), HTA (\${3:+}), Dislipidemia (\${4:+}), IAM (\${5:-}), ACV (\${6:-})
+- Fco: \${7:fcos}
+- Cx: \${8:cx}
+- Alergia:no refiere
+- A.familiares: no refiere. 
+    - IAM: (\${9:-}) 
+    - IAM/ACV < 65 años: 
+- Hábitos:  
+    - TBQ: (\${10:+})
+    - OH: (\${11:+})
+    - Drogas: (\${12:+})
+    - Ejercicio: (\${13:+})
+    - Alimentación: (\${14:Variada, sin restricciones})
+- Vacunas: Influenza (\${15:+}), Neumococo (\${16:+}), Covid-19 (\${17:+})
+- Social: Vive con (\${18:pareja/hijos}), trabaja en (\${19:trabajo}), estudios (\${20:estudios})
+- Actividad: Actualmente (\${21:actividad})
+
+—---------------------ACTUALMENTE—-------------------
+Paciente refiere sentirse (\${22:bien/mal}), sin síntomas de alarma.
+- Adherencia al tto: (\${23:buena})
+
+Interrogatorio Dirigido
+- DM: Polidipsia (\${24:+}) polifagia (\${25:+})   poliuria  (\${26:+})   perdida de peso (\${27:+})
+- Complicaciones DM: Dolor (\${28:-}) Ardor (\${29:-}) Adormecimiento (\${30:-}), visión borrosa (\${31:-})
+- HTA: : Tinnitus (\${32:-})   cefalea (\${33:-})    visión doble (\${34:-})
+- IC: 
+    DPN (\${35:-}), ortopnea (\${36:-}), Nicturia (\${37:-})
+    angina (\${38:-}), edema EEII(\${39:-}), Claudicación intermitente (\${40:-})
+    Capacidad funcional NYHA: (\${41:I: sin disnea
+II: a la actividad física leve
+III: a las actividades de lavida diaria
+IV: en reposo})
+
+Otros síntomas: (\${42:ninguno})
+
+------------------------EXÁMEN FÍSICO--------------------
+-Paciente en BCG, Bien hidratado y perfundido a distal
+-Cuello: sin adenopatías palpables, no ausculto soplo carotideo, acantosis nigricans ( ) acrocordones ( )
+-Tórax: simétrico, sin lesiones. MP+, SRA. Cardiaco con RR2T, no ausculto soplos
+-EEII: pulsos presentes y simétricos, sin lesiones. Edema ( ), sin signos de TVP. 
+
+-------------------------LABORATORIO---------------------
+ / / 24 en formulario,  destaca \${43:}
+
+------------------------PLAN---------------------------
+
+1. Educación sobre patologías, importancia de mantener adherencia a controles, tratamiento farmacológico y hábitos de vida saludable, alimentación balanceada y actividad física mínimo 150 minutos/semana 
+2. Solicito Fondo de Ojo  y para próximo control Exámenes FALTANTES  
+4. Próximo control Programa Cardiovascular: 
+5. Educación síntomas de alarma y consulta en servicio de urgencias SOS
+6. Se extiende receta por 6 meses 
+
+`,
+    detail: "Control cardiovascular"
     }
+
 
 
   };
