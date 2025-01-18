@@ -558,21 +558,14 @@ Atentamente,
 
 Dr. Daniel Arturo San Martín Martínez
 Médico-Cirujano
-Registro Nacional: 861577
+Registro SIS: 861577
 dasanmartinm@gmail.com
 `,
         detail: "Certificado de salud"
     },
     "control_cv": {
         kind: monaco.languages.CompletionItemKind.Snippet,
-        insertText: `PLANTILLA CONTROL CARDIOVASCULAR 
-Paciente de \${1:edad} años acude a control CV con resultado de exámenes.
-
----------------------ÚLTIMOS CONTROLES---------------	
-Med:
-Nut:   
-Enf: 
-
+        insertText: `Acude a control CV con resultado de exámenes.
 
 -------------------------ANTECEDENTES------------------
 - AM: DM2 (\${2:+}), HTA (\${3:+}), Dislipidemia (\${4:+}), IAM (\${5:-}), ACV (\${6:-})
@@ -621,18 +614,37 @@ Otros síntomas: (\${42:ninguno})
 
 ------------------------PLAN---------------------------
 
-1. Educación sobre patologías, importancia de mantener adherencia a controles, tratamiento farmacológico y hábitos de vida saludable, alimentación balanceada y actividad física mínimo 150 minutos/semana 
-2. Solicito Fondo de Ojo  y para próximo control Exámenes FALTANTES  
+1. Educación sobre patologías, importancia de mantener adherencia a controles, tratamiento farmacológico y hábitos de vida saludable, alimentación saludable y actividad física mínimo 150 minutos/semana
+2. Educación síntomas de alarma y consulta en servicio de urgencias SOS
+3. Se extiende receta por 6 meses 
 4. Próximo control Programa Cardiovascular: 
-5. Educación síntomas de alarma y consulta en servicio de urgencias SOS
-6. Se extiende receta por 6 meses 
+5. (Solicito Fondo de Ojo  y para próximo control Exámenes FALTANTES)  
 
 `,
     detail: "Control cardiovascular"
-    }
+    },
+    "ingreso_cv": {
+        kind: monaco.languages.CompletionItemKind.Snippet,
+        insertText: `Ingresa a control CV
+Planes:
+1) solicito ex ingreso PSCV:
+    - Hematocrito
+    - Glicemia
+    - Perfil lipídico
+    - Creatinina plasmática
+    - Uricemia
+    - Electrolitos plasmáticos
+    - Orina completa
+    - Electrocardiograma
+    - Razón albuminuria creatinuria RAC (en DM e HTA)
+    - HbA1c (en DM)
+    - Fondo de ojo (DM confirmada)
+2) Recomendación hábitos de vida saludable: alimentación saludable, cese tabáquico, actividad física regular (>150 min/semana, sugiero revisar página programa "elige vivir sano"), moderación en consumo de alcohol
 
+`}
 
 
   };
+
 
 export default snippets_basales;
