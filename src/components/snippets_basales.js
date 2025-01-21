@@ -568,11 +568,12 @@ dasanmartinm@gmail.com
         insertText: `Acude a control CV con resultado de exámenes.
 
 -------------------------ANTECEDENTES------------------
-- AM: DM2 (\${2:+}), HTA (\${3:+}), Dislipidemia (\${4:+}), IAM (\${5:-}), ACV (\${6:-})
+- AM: DM2 (\${2:+}), HTA (\${3:+}), Dislipidemia (\${4:+}) 
+    - IAM (\${5:-}), ACV (\${6:-})
 - Fco: \${7:fcos}
-- Cx: \${8:cx}
-- Alergia:no refiere
-- A.familiares: no refiere. 
+- Cx: \${8:niega}
+- Alergia: no refiere
+- A.familiares: 
     - IAM: (\${9:-}) 
     - IAM/ACV < 65 años: 
 - Hábitos:  
@@ -580,17 +581,17 @@ dasanmartinm@gmail.com
     - OH: (\${11:+})
     - Drogas: (\${12:+})
     - Ejercicio: (\${13:+})
-    - Alimentación: (\${14:Variada, sin restricciones})
+    - Alimentación: \${14:Consumo de frutas y verduras, fuentes de proteínas no ultraprocesadas, bajo consumo de azúcares y grasas saturadas}
 - Vacunas: Influenza (\${15:+}), Neumococo (\${16:+}), Covid-19 (\${17:+})
-- Social: Vive con (\${18:pareja/hijos}), trabaja en (\${19:trabajo}), estudios (\${20:estudios})
+- Social: Vive con (\${18:pareja/hijos}), estudios (\${20:estudios})
 - Actividad: Actualmente (\${21:actividad})
 
 —---------------------ACTUALMENTE—-------------------
-Paciente refiere sentirse (\${22:bien/mal}), sin síntomas de alarma.
+Paciente refiere sentirse \${22:bien}, sin síntomas de alarma.
 - Adherencia al tto: (\${23:buena})
 
 Interrogatorio Dirigido
-- DM: Polidipsia (\${24:+}) polifagia (\${25:+})   poliuria  (\${26:+})   perdida de peso (\${27:+})
+- DM: Polidipsia (\${24:-}) polifagia (\${25:-})   poliuria  (\${26:-})   perdida de peso (\${27:-})
 - Complicaciones DM: Dolor (\${28:-}) Ardor (\${29:-}) Adormecimiento (\${30:-}), visión borrosa (\${31:-})
 - HTA: : Tinnitus (\${32:-})   cefalea (\${33:-})    visión doble (\${34:-})
 - IC: 
@@ -604,10 +605,11 @@ IV: en reposo})
 Otros síntomas: (\${42:ninguno})
 
 ------------------------EXÁMEN FÍSICO--------------------
+
 -Paciente en BCG, Bien hidratado y perfundido a distal
--Cuello: sin adenopatías palpables, no ausculto soplo carotideo, acantosis nigricans ( ) acrocordones ( )
+-Cuello: sin adenopatías palpables, no ausculto soplo carotideo, acantosis nigricans () acrocordones ()
 -Tórax: simétrico, sin lesiones. MP+, SRA. Cardiaco con RR2T, no ausculto soplos
--EEII: pulsos presentes y simétricos, sin lesiones. Edema ( ), sin signos de TVP. 
+-EEII: pulsos presentes y simétricos, sin lesiones. Edema (), sin signos de TVP. 
 
 -------------------------LABORATORIO---------------------
  / / 24 en formulario,  destaca \${43:}
@@ -617,7 +619,9 @@ Otros síntomas: (\${42:ninguno})
 1. Educación sobre patologías, importancia de mantener adherencia a controles, tratamiento farmacológico y hábitos de vida saludable, alimentación saludable y actividad física mínimo 150 minutos/semana
 2. Educación síntomas de alarma y consulta en servicio de urgencias SOS
 3. Se extiende receta por 6 meses 
+
 4. Próximo control Programa Cardiovascular: 
+
 5. (Solicito Fondo de Ojo  y para próximo control Exámenes FALTANTES)  
 
 `,
