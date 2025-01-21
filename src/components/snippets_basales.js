@@ -247,9 +247,14 @@ const snippets_basales = {
         insertText: "- Antecedentes médicos: ${1:Hipertensión arterial, Diabetes mellitus, }\n- Fármacos: ${2:fcos por aquí}\n- Alergias: ${3:niega}\n- Antecedentes quirúrgicos: ${4:cirugías}\n- Hábitos: Tabaco (${5:+/-}), Alcohol (${6:+/-}), Drogas (${7:+/-})",
         detail: "Anamnesis remota simple"
     },
-    "ef_normal": {
+    "ef_normal_sv": {
         kind: monaco.languages.CompletionItemKind.Snippet,
-        insertText: "- SV: T° ${1:num}°C, FC ${2:num} lpm, PA ${3:num}/${4:num} mmHg, FR ${5:num} rpm, SatO2 ${6:num}%\n- Mucosas ${7:hidratadas}, bien perfundida a distal\n- Tórax: ${8:RR2TSS}, ${9:MP(+) SRA}\n- Abdomen: ${10:Depresible}, ${11: indoloro a la palpación}, ${12: sin signos de irritación peritoneal}\n- Extremidades: ${13: sin edema ni signos de trombosis venosa profunda}",
+        insertText: "- SV: T° ${1:num}°C, FC ${2:num} lpm, PA ${3:num}/${4:num} mmHg, FR ${5:num} rpm, SatO2 ${6:num}%\n- Mucosas ${7:hidratadas}, bien perfundida a distal\n- Tórax: ${8:RR2TSS}, ${9:MP(+) SRA}\n- Abdomen: ${10:Depresible}, ${11: indoloro a la palpación, no palpo masas ni visceromegalias}, ${12: sin signos de irritación peritoneal}\n- Extremidades: ${13: sin edema ni signos de trombosis venosa profunda}",
+        detail: "Examen físico"
+    },
+    "ef_normal":{
+        kind: monaco.languages.CompletionItemKind.Snippet,
+        insertText: "- Mucosas ${7:hidratadas}, bien perfundida a distal\n- Tórax: ${8:RR2TSS}, ${9:MP(+) SRA}\n- Abdomen: ${10:Depresible}, ${11: indoloro a la palpación}, ${12: sin signos de irritación peritoneal}\n- Extremidades: ${13: sin edema ni signos de trombosis venosa profunda}",
         detail: "Examen físico"
     },
     "ef_normal_og": {
