@@ -650,10 +650,123 @@ Planes:
     - Fondo de ojo (DM confirmada)
 2) Recomendación hábitos de vida saludable: alimentación saludable, cese tabáquico, actividad física regular (>150 min/semana, sugiero revisar página programa "elige vivir sano"), moderación en consumo de alcohol
 
-`}
+`, 
+    detail: "Ingreso control cardiovascular"
+    },
+    "control_sm": {
+        kind: monaco.languages.CompletionItemKind.Snippet,
+        insertText: `Control de salud mental
+Remota:
+- Enfermedades Previas:
+- Fármacos:
+- Alergias:
+- Antecedentes Familiares:
+- Con quien vive:
+- Pareja:
+- Hijos:
+- Mascota:
+- Ocupación:
+- Tabaquismo/Drogas/OH:
+
+Motivo de Consulta
+- Inicio/Desencadanante: 
+- Síntomas: 
+- Temporalidad: 
+- Factores estresantes: 
+- Episodios y tratamentos previos: 
+
+Adherencia a fármacos: 
+
+Psicoterapia: 
+Crisis de pánico: no 
+
+1. Ánimo:     /10 
+2. Ansiedad:  /10
+3. Sueño:    durmiendo bien 
+4. Apetito:  regular
+5. Memoria:  normal 
+6. Abuso de sustancias: no 
+7. Sensopercepción:     normal
+8. Impulsividad: no 
+9. Suicidio:     no
+
+Examen Mental:
+1. Apariencia y conducta:
+    - Aspecto: normal 
+    - Edad cronológica: acorde
+    - Saludo y normas sociales: si
+    - Vestimenta, cuidado: normal
+2. Psicomotricidad: 
+    - Postura corporal: adecuada 
+    - Mímica facial: normal
+    - Contacto visual: si
+3. Conciencia
+    - Vigil: si
+    - Atención y concentración: desconcentrada 
+    - Orientación: normal
+4. Discurso
+    - Intensidad voz: normal 
+    - Velocidad:      normal 
+    - Vocabulatorio:  normal 
+    - Continuidad:    normal 
+    - Lógica del discurso: si 
+5. Contenido del discurso:
+    - Delirio: no
+    - Ideas y miedos patológicos: si, andar en metro 
+6. Afectividad neutralidad 
+7. Sensopercepción -> Ilusiones y alucinaciones: no
+`,
+        detail: "Control salud mental"
+    },
 
 
-  };
+"examen_mental": {
+    kind: monaco.languages.CompletionItemKind.Snippet,
+    insertText: `Examen mental
+1. Apariencia y conducta:
+    - Aspecto: normal 
+    - Edad cronológica: acorde
+    - Saludo y normas sociales: si
+    - Vestimenta, cuidado: normal
+2. Psicomotricidad: 
+    - Postura corporal: adecuada 
+    - Mímica facial: normal
+    - Contacto visual: si
+3. Conciencia
+    - Vigil: si
+    - Atención y concentración: desconcentrada 
+    - Orientación: normal
+4. Discurso
+    - Intensidad voz: normal 
+    - Velocidad:      normal 
+    - Vocabulatorio:  normal 
+    - Continuidad:    normal 
+    - Lógica del discurso: si 
+5. Contenido del discurso:
+    - Delirio: no
+    - Ideas y miedos patológicos: si, andar en metro 
+6. Afectividad neutralidad 
+7. Sensopercepción -> Ilusiones y alucinaciones: no`
+    ,
+    detail: "Examen mental"
+},
+"remota_salud_mental": {
+    kind: monaco.languages.CompletionItemKind.Snippet,
+    insertText: `Antecedentes:
+- Enfermedades Previas:\${1:}
+- Fármacos:\${2:}
+- Alergias:\${3:}
+- Antecedentes Familiares:\${4:}
+- Con quien vive:\${5:}
+- Pareja:\${6:}
+- Hijos:\${7:}
+- Mascota:\${8:}
+- Ocupación:\${9:}
+- Drogas: TBQ (\${10:+}) OH (\${11:+}) Drogas (\${12:+})`,
+    detail: "Anamnesis remota salud mental"
+},
+};
+
 
 
 export default snippets_basales;
