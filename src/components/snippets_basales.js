@@ -272,6 +272,15 @@ const snippets_basales = {
         insertText: "Paciente en vigilia espontanea, orientado en tiempo, espacio y persona. Lenguaje fluente, sin alteraciones de la memoria, funciones ejecutivas conservadas. Pares craneales sin alteraciones, sin paresias ni alteraciones de la sensibilidad en miembros superiores e inferiores. Reflejos osteotendíneos simétricos y conservados, reflejos superficiales (-), sin signos de liberación frontal. Sensibilidad superficial y profunda conservadas. Sin alteraciones del equilibrio o la marcha. Sin dismetrías ni disdiadococinesias. Signos meníngeos (-)\r\n",
         detail: "ef neuro resumido"
     },
+    "ef_neuro_breve_ordenado": {
+        kind: monaco.languages.CompletionItemKind.Snippet,
+        insertText: `Neurológico: 
+- Pares craneales: Reflejo pupilar presente, simétrico. Campo visual por amenaza conservado. Oculomotilidad conservada. Sin nistagmo. Musculatura facial simétrica, sin parálisis ni paresias. Lengua motilidad conservada, sin desviación. Velo del paladar simétrico. Elevación hombros simétrico.
+- Cerebelo: Prueba disdiaquocinesia (-). Romberg (-). Dismetria EESS (-).
+- Fuerza muscular extremidades conservada. Tono muscular conservado. Sensibilidad conservada. Marcha conservada.`,
+    
+            detail: "ex físico neuro breve ordenado"
+        },
     "ef_vertigo": {
         kind: monaco.languages.CompletionItemKind.Snippet,
         insertText: "- Head impulse test: ${1:positivo/negativo}\r\n- Oculomotilidad: ${2:movimientos oculares conservados, sin nistagmus}\r\n- Test of Skew: ${3:positivo/negativo}\r\n- ${4:Audición conservada}\r\n- Test de Romberg: ${5:positivo/negativo}\r\n- Dix-Hallpike: ${6:positivo/negativo}\r",
@@ -506,65 +515,44 @@ const snippets_basales = {
     "remota_pediatria":
     {
         kind: monaco.languages.CompletionItemKind.Snippet,
-        insertText: `Antecedentes:
-- Perinatales: embarazo controlado, parto \${1:vaginal/cesárea}, RNT \${2:38} semanas, PN \${3:nn} g TN \${4:nn} cm, sin patología perinatal.
+        insertText: `*acude con \${1:madre/padre/tutor}*
+        
+Antecedentes:
+- Perinatales: embarazo controlado, parto \${2:vaginal/cesárea}, RNT \${3:38} semanas, PN \${4:nn} g TN \${5:nn} cm, sin patología perinatal.
 - Mórbidos: (-)
 - Hospitalizaciones: (-)
 - Medicamentos: (-)
 - Quirúrgicos: (-)
 - Alergias: (-)
-- Vacunas: PNI al día, Covid-19 (+), Influenza 2023 (+)
+- Vacunas: PNI al día, Covid-19 (+), Influenza 2025 (+)
+- Antecedentes familiares: madre, padre y hermano sanos
+- Social: vive con \${6:madre}, tabaco en hogar (-), servicios básicos (+), mascotas (-), calefacción (+)
+
 `,
         detail: "Anamnesis remota pediatría"
     },
-    "ex_fisico_pediatria":
+    "ef_pediatria":
     {
         kind: monaco.languages.CompletionItemKind.Snippet,
-        insertText: `
-Examen físico:
+        insertText: `Examen físico:
 - \${1:Consciente, orientado, cooperador, reactivo al medio}, llenado capilar < 2 segundos
 - T° \${2:num}°C, FC \${3:num} lpm, FR \${4:num} rpm, SatO2 \${5:num}%
-- Mucosas rosadas e hidratadas, signo del pliegue (-), ojos no hundidos, llanto con lagrimas. Faringe y amigdalas no eritematosas. 
+- Mucosas rosadas e hidratadas, signo del pliegue (-), ojos no hundidos, llanto con lagrimas. 
+- Ojos sin inyección conjuntival
+- Faringe y amigdalas no conjestivas. 
 - Oído: CAE sin eritema ni secreción. Tímpano claro, no abombado, sin perforación
-- Fontanela anterior normotensa, no abombada, no deprimida.
+- Fontanela anterior normotensa
 - Cuello: no palpo adenopatías
 - Torax simétrico sin retracciones.
 - Cardiopulmonar: MP (+) sin ruidos agregados, RR2T no ausculto soplos
 - Abdomen: RHA(+). Blando, depresible, no doloroso, no palpo masas ni visceromegalias. Blumberg (-). 
+- Genitales femeninos/masculinos sanos
 - EEII: sin edema, pulsos palpables simétricos.
 - Piel y faneras: 
-- Neurológico: 
-`,
+- Neurológico:`,
         detail: "Examen físico pediatría"
     }, 
-    "certificado_salud" : {
-        kind: monaco.languages.CompletionItemKind.Snippet,
-        insertText: `CERTIFICADO DE SALUD
 
-Dr. Daniel Arturo San Martín Martínez
-Médico Cirujano
-Registro Nacional: 861577
-Dirección: CESFAM Los Bajos de San Agustín, Av. Calera de Tango Paradero 13, Calera de Tango, Santiago
-
-A quien corresponda:
-
-Por medio de la presente, certifico que \${1:el(la) Sr(a). [Nombre completo del paciente]}, RUT \${2:[Número de identificación]}, ha sido evaluado(a) en consulta médica el día \${3:fecha de evaluación}.
-
-Tras la revisión de sus antecedentes clínicos y la realización de un examen físico completo, se concluye que el(la) paciente se encuentra \${4:en óptimas condiciones de salud, sin evidencias de patologías que puedan comprometer su desempeño profesional}.
-
-Esta certificación se emite a solicitud del interesado(a) para ser presentada para los fines que estime conveniente.
-
-Sin otro particular, quedo a disposición para cualquier consulta adicional.
-
-Atentamente,
-
-Dr. Daniel Arturo San Martín Martínez
-Médico-Cirujano
-Registro SIS: 861577
-dasanmartinm@gmail.com
-`,
-        detail: "Certificado de salud"
-    },
     "control_cv": {
         kind: monaco.languages.CompletionItemKind.Snippet,
         insertText: `Acude a control CV con resultado de exámenes.
@@ -779,10 +767,91 @@ Examen Mental:
 },
 "sos_dolor_toracico": {
     kind: monaco.languages.CompletionItemKind.Snippet,
-    insertText: "Consultar en urgencias en caso de síntomas de alarma tales como: dolor torácico intenso, dolor al hombro o mandíbula, dificultad para respirar, sudoración excesiva, mareo o desmayo, otros síntomas que estime deban recibir atención médica de urgencias.",
-    detail:"banderas rojas dolor torácico"}
+    insertText: "Consultar en urgencias en caso de síntomas de alarma tales como: dolor torácico intenso, dolor al hombro o mandíbula, dificultad para respirar, sudoración excesiva, mareo o desmayo, otros síntomas que estime deban recibir atención médica de urgencias",
+    detail:"banderas rojas dolor torácico"
+},
+"sos_sbo": {
+    kind: monaco.languages.CompletionItemKind.Snippet,
+    insterText: "Consultar en urgencias en caso de síntomas de alarma tales como: dificultad respiratoria que no responda a esquema de salbutamol(hundimiento de costillas, silbido de pecho, coloración morada/azulina de labios o piel), rechazo de alimentación, cansancio mayor al alimentarse, fiebre > 38°C que no ceda con paracetamol por más de 3 días, otros síntomas que estime deban recibir atención médica de urgencias.",
+    detail: "banderas rojas SBO"
+}, 
+"tto_virosis_respi_ambulatorio": {
+    kind: monaco.languages.CompletionItemKind.Snippet,
+    insertText:`1. Reposo en domicilio por \${1:5} días
+2. Régimen saludable a tolerancia, ofrecer líquidos
+3. Seguir tratamiento sintomático:
+    - Paracetamol \${2:10-15 mg/kg/día}ml cada 6 horas por 5 días en caso de fiebre >38°C o dolor, máximo cada 6 hrs.
+        - Paracetamol jarabe 100mg/ml, 160mg/5ml, comprimidos 80,120,160. 
+    - Ibuprofeno \${3:5-10 mg/kg/dosis}ml SOS en caso de fiebre como segunda línea, máximo cada 8 horas
+        - 100mg/ml, 200mg/5ml, comprimidos 400,600. desde los 6 meses, máx 40 mg/Kg/día
+4. Realizar aseo nasal frecuente con solución salina (Fisiolimp, Fisiomar o suero fisiológico) o aspiración nasal.
+5. Prevenir infecciones respiratorias: evitar lugares cerrados con aglomeraciones, evitar contacto con personas enfermas y ventilar el hogar. 
+6. Control en servicio de urgencia en caso de fiebre > 38°C, dificultad respiratoria (quejidos, retracción costal), rechazo alimentario o según necesidad. 
+7. Seguir esquema de vacunación acorde a campañas ministeriales. 
+`,
+    detail: "Tratamiento virosis respiratoria ambulatorio"
+},
+    "tto_sbo_leve_ambulatorio":{
+            
+    kind: monaco.languages.CompletionItemKind.Snippet,
+    insertText:`1. Reposo en domicilio por \${1:5} días
+    2. Salbutamol 2 puff cada 4-6 horas por 7 días. Evaluar respuesta en 1 día.
+    3. Evitar alergenos y tabaquismo en hogar
+    4. Consultar en urgencias en caso de presentar fiebre > 38°C, dificultad respiratoria (quejidos, retracción costal), rechazo alimentario o según necesidad. `,
+    detail: "Tratamiento SBO leve ambulatorio"
+    },
+    "tto_sbo_moderado_urgencia": {
+        kind: monaco.languages.CompletionItemKind.Snippet,
+        insertText: `Esquema abreviado de salbutamol y reevaluar en 1 hora:
+        - 2 puff cada 10 minutos por 5 dosis (< 5 años)
+        - 4 puff cada 20 minutos por 9 dosis (> 5 años)`,
+        detail: "Tratamiento SBO moderado urgencia"
+    },
+    "tto_sbo_moderado_recuperado": {
+        kind: monaco.languages.CompletionItemKind.Snippet,
+        insertText: `1. Reposo en domicilio por \${1:5} días
+2. Salbutamol 2 puff cada 4-6 horas por 7 días
+3. Prednisona 1 mg/kg/día por 5 días (máx 40 mg/día) por 5 días.`,
+        detail: "Tratamiento SBO moderado recuperado, que se va de alta"},
+
+    "tto_sbo_grave_urgencia": {
+        kind: monaco.languages.CompletionItemKind.Snippet,
+        insertText: `Oxígeno suplementario para saturar >94%
+        prednisona 1 mg/kg/día por 5 días (máx 40 mg/día) por 5 días
+        salbutamol 2 puff cada 10 minutos por 5 dosis (< 5 años), luego cada 4-6 horas por 7 días`,
+        detail: "Tratamiento SBO grave urgencia"
+    },
+
+
+    "tto_otitis_media_aguda": {
+        kind: monaco.languages.CompletionItemKind.Snippet,
+        insertText: `1. Reposo en domicilio por \${1:3} días
+2. Régimen saludable a tolerancia, ofrecer líquidos
+3. Tratamiento antibiótico: Amoxicilina 50mg/kg/día, cada 12 horas por 10 días
+        - Amoxicilina jarabe 125mg/5ml, 250mg/5ml, comprimidos 500mg
+4. Tratamiento sintomático: Paracetamol 10-15 mg/kg/día cada 6 horas por 5 días en caso de fiebre >38°C o dolor, máximo cada 6 hrs.
+        - Paracetamol jarabe 100mg/ml, 160mg/5ml, comprimidos 80,120,160.
+5. Control en servicio de urgencia en caso de fiebre > 38°C, dificultad respiratoria (quejidos, retracción costal), rechazo alimentario o según necesidad.`,
+    
+        detail: "Tratamiento otitis media aguda"
+        },
+"tto_diarrea_ped": {
+    kind: monaco.languages.CompletionItemKind.Snippet,
+    insertText: `1. Reposo en domicilio por \${1:5} días. Vuelta a clases el día 
+2. Régimen liviano todo cocido (arroz, fideos, sémola, papas cocidas, pan, carnes magras, pollo, pavo cocido o a la plancha, caldos, postre se sugiere dar manzana cocida o jalea no roja). Evitar inicialmente verduras ricas en fibras como son las de color verde. No consumir golosinas, snacks y frituras. 
+3. Hidratación oral mediante sales de rehidratación oral
+    - vómitos: 4 ml/kg tras cada episodio, max 250 ml
+    - diarrea: 10 ml/kg tras cada episodio, max 250 ml
+    - Pedialyte zinc o Rehsal 60: dar a tomar ml posterior a vómitos o diarrea. Por 5 días
+    - Perenteryl o Enterol S o Vivera en sobres: diluir un sobre en 10 ml de agua (no caliente) y dar cada 12 horas por 5 días
+
+4. NO consumir bebidas de deportistas (Gatorade, Powerade, etc), bebidas con azúcar o con gas.
+5. NO usar antiespasmódicos (por ejemplo Viadil). Ni Domperidona, Ni metoclopramida 
+6. Recuerde mantener una buena higiene y lavado de manos luego de ir al baño. 
+7. Consultar en servicio de urgencia si: muy decaída, boca seca, no tolera líquidos (vomita todo), no orina en más de 6 hrs, fiebre > 38°C o según necesidad. `,
+    
+        detail: "Tratamiento diarrea"
+    },
 };
-
-
 
 export default snippets_basales;
