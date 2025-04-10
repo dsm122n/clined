@@ -495,21 +495,18 @@ const snippets_basales = {
     },
     "control_puerperio": {
         kind: monaco.languages.CompletionItemKind.Snippet,
-        insertText: "Control${1: de la díada} en ${2:5-7} días con ${3:matrona}, en ${4:CESFAM correspondiente}, agendar hora. ${5:Debe acudir con recién nacido}\nEn caso de presentar irritabilidad marcada, rechazo a recién nacido, pena persistente o síntomas similares, acudir a su CESFAM para orientación y manejo$6",
+        insertText: "Control${1: de la díada} en ${2:5-7} días con ${3:matrona}, en ${4:CESFAM correspondiente}, agendar hora. ${5:Debe acudir con recién nacido}\nEn caso de presentar irritabilidad marcada, rechazo a recién nacido, pena persistente o síntomas similares, acudir a su CESFAM para orientación y manejo",
         detail: "Control y consulta en urgencias"
     },
     "sos": {
         kind: monaco.languages.CompletionItemKind.Snippet,
         insertText: "Consultar en urgencias en caso de síntomas de alarma tales como: ${1:dolor abdominal que no cede con analgesia, sangrado genital abundante, fiebre, dificultad respiratoria, u otros síntomas que estime deban recibir atención médica de urgencias}.",
-        "description": "Indicación de consulta en urgencias",
         detail: "Consulta sos en urgencias"
     },
     "remota_pediatria":
     {
         kind: monaco.languages.CompletionItemKind.Snippet,
-        insertText: `
-
-Antecedentes:
+        insertText: `Antecedentes:
 - Perinatales: embarazo controlado, parto \${1:vaginal/cesárea}, RNT \${2:38} semanas, PN \${3:nn} g TN \${4:nn} cm, sin patología perinatal.
 - Mórbidos: (-)
 - Hospitalizaciones: (-)
@@ -765,6 +762,25 @@ Examen Mental:
 - Drogas: TBQ (\${10:+}) OH (\${11:+}) Drogas (\${12:+})`,
     detail: "Anamnesis remota salud mental"
 },
+"sos_cefalea": {
+    kind: monaco.languages.CompletionItemKind.Snippet,
+    insertText: `Consultar en urgencias en caso de síntomas de alarma tales como: cefalea de inicio súbito para llegar a dolor intenso, fiebre, debilidad muscular, visión borrosa, empeoramiento al acostarse o al toser, sensación de pitido en el oído o disminución de audición, confusión, asimetría facial u otros síntomas que estime deban recibir atención médica de urgencias.`,  
+    detail: "banderas rojas cefalea"
+},
+"sos_lumbago": {
+    kind: monaco.languages.CompletionItemKind.Snippet,
+    insertText: `Consultar en urgencias en caso de síntomas de alarma tales como: lumbago con debilidad o adormecimiento en piernas, pérdida de control de esfínteres, fiebre, pérdida de peso, dolor nocturno o que no mejora con el reposo, otros síntomas que estime deban recibir atención médica de urgencias.`,  
+    detail: "banderas rojas lumbago"
+},
+"sos_dolor_abdominal": {
+    kind: monaco.languages.CompletionItemKind.Snippet,
+    insertText: `Consultar en urgencias en caso de síntomas de alarma tales como: dolor abdominal intenso, fiebre, vómitos persistentes, sangrado, pérdida de peso, otros síntomas que estime deban recibir atención médica de urgencias.`,  
+    detail: "banderas rojas dolor abdominal"
+},
+"sos_dolor_toracico": {
+    kind: monaco.languages.CompletionItemKind.Snippet,
+    insertText: "Consultar en urgencias en caso de síntomas de alarma tales como: dolor torácico intenso, dolor al hombro o mandíbula, dificultad para respirar, sudoración excesiva, mareo o desmayo, otros síntomas que estime deban recibir atención médica de urgencias.",
+    detail:"banderas rojas dolor torácico"}
 };
 
 
