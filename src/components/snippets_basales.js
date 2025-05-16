@@ -162,7 +162,7 @@ const snippets_basales = {
     // Fármacos
     'paracetamol_vo': {
         kind: monaco.languages.CompletionItemKind.Snippet,
-        insertText: 'Paracetamol 1 gr cada 8 horas vía oral por ${1:5} días ${2:en caso de dolor}',
+        insertText: 'Paracetamol 500mg 2 comprimidos cada 8 horas vía oral por ${1:5} días ${2:en caso de dolor}',
         description: 'Indicación paracetamol vía oral',
         detail: 'paracetamol vía oral'
     },
@@ -174,18 +174,7 @@ const snippets_basales = {
     },
 
 
-    'ketoprofeno_vo': {
-        kind: monaco.languages.CompletionItemKind.Snippet,
-        insertText: 'Ketoprofeno 50 mg cada 8 horas vía oral por ${1:3} días ${2:en caso de dolor}',
-        description: 'Indicación ketoprofeno vía oral',
-        detail: 'ketoprofeno vía oral'
-    },
-    'ketoprofeno_ev': {
-        kind: monaco.languages.CompletionItemKind.Snippet,
-        insertText: 'Ketoprofeno 100 mg cada 8 horas vía endovenosa',
-        description: 'Indicación ketoprofeno vía endovenosa',
-        detail: 'ketoprofeno vía endovenosa'
-    },
+
 
     'fcos_uso_habitual': {
         kind: monaco.languages.CompletionItemKind.Snippet,
@@ -767,7 +756,7 @@ Examen Mental:
 },
 "sos_dolor_toracico": {
     kind: monaco.languages.CompletionItemKind.Snippet,
-    insertText: "Consultar en urgencias en caso de síntomas de alarma tales como: dolor torácico intenso, dolor al hombro o mandíbula, dificultad para respirar, sudoración excesiva, mareo o desmayo, otros síntomas que estime deban recibir atención médica de urgencias",
+    insertText: "Consultar en urgencias en caso de síntomas de alarma tales como: dolor torácico intenso que inicie en reposo o no alivie con reposo, dolor al hombro o mandíbula, dificultad para respirar, sudoración excesiva, mareo o desmayo, otros síntomas que estime deban recibir atención médica de urgencias",
     detail:"banderas rojas dolor torácico"
 },
 "sos_sbo": {
@@ -852,6 +841,143 @@ Examen Mental:
     
         detail: "Tratamiento diarrea"
     },
+"tto_migrana": {
+    kind: monaco.languages.CompletionItemKind.Snippet,
+    insertText: `(I) Para crisis lo mejor es tomar los medicamentos en dosis adecuadas y lo más temprano posible para evitar que llegue a su máxima intensidad (inclusive antes del dolor si presenta aura). Alternativas de medicamentos:
+
+1. Antiinflamatorios no esteroidales (AINEs):
+- ***Naproxeno 550mg: hasta 2 veces al día
+- Ibuprofeno 600mg: hasta 3 veces al día
+- Diclofenaco 50mg: hasta 2 veces al día
+
+2. Triptanes:
+- Naratriptan 2.5mg: 1 comprimido al inicio de la crisis, se puede repetir dosis a las 4 horas si no ha cedido el dolor.
+    - Inicio de acción más lenta (4 horas), pero efecto más duradero
+    - Avisar si no es efectivo para cambiar a otro triptán
+    - Más barato
+- Eletriptan 20mg: 1 comprimido al inicio de la crisis.
+    - Inicio de acción más rápido (1-2 horas)
+    - Si no se tiene respuesta, avisar a médico, se puede intentar aumentar dosis SOS en crisis siguientes con 40mg
+    - Más caro
+
+3. Para crisis con nauseas:
+- Metoclopramida 10mg: se puede tomar hasta 3 veces al día en caso de nauseas
+
+***MODO DE USO:
+- Tomar un medicamento del punto 1. (AINEs) o un medicamento del punto 2. (Triptanes) al inicio de la crisis
+- En caso de náuseas, tomar metoclopramida 10mg, máximo cada 8 horas
+- Los triptanes no deberían utilizarse más de 10 días al mes, ya que pueden llevar a dolor de cabeza por abuso de medicamentos
+
+(II) Medidas no farmacológicas para prevención: evitar los gatillantes identificados (por ejemplo: estrés, falta de sueño, ayuno prolongado, alcohol, ciertos alimentos como chocolate, quesos curados, embutidos, etc.), mantener una buena hidratación y alimentación regular, realizar ejercicio regularmente y mantener una buena higiene del sueño. Procurar no tomar medicamentos de forma excesiva, ya que puede llevar a dolor de cabeza por abuso de medicamentos.
+
+(III) Consultar en urgencias en caso de síntomas de alarma tales como: dolor de cabeza de inicio súbito para llegar a dolor intenso, fiebre, debilidad muscular, visión borrosa, empeoramiento al acostarse o al toser, sensación de pitido en el oído o disminución de audición, confusión, asimetría facial, si no alivia con medicamentos u otros síntomas que estime deban recibir atención médica de urgencias.
+.`
+    ,
+    detail: "Tratamiento crisis migraña"
+},
+"tto_cefalea_tensional": {
+    kind: monaco.languages.CompletionItemKind.Snippet,
+    insertText: `- Paracetamol 500mg 2 comprimidos cada 6 horas hasta por 5 días
+- Diclofenaco 50mg 1 comprimido cada 8 horas hasta por 5 días
+- (Naproxeno 550mg 1 comprimido cada 12 horas hasta por 5 días, tendría que comprarlo)
+- Hidratación abundante
+- Consultar en urgencias en caso de síntomas de alarma tales como: dolor de cabeza de inicio súbito para llegar a dolor intenso, fiebre, debilidad muscular, visión borrosa, empeoramiento al acostarse o al toser, sensación de pitido en el oído o disminución de audición, confusión, asimetría facial, si no alivia con medicamentos u otros síntomas que estime deban recibir atención médica de urgencias.`
+    ,
+    detail: "Tratamiento cefalea tensional"
+},
+
+
+"ind_analgesia_ketoprofeno_pct_ev_vo": {
+    kind: monaco.languages.CompletionItemKind.Snippet,
+    insertText: `Ketoprofeno 100mg ev en bolo + paracetamol 500mg 2 comprimidos vo`,
+    detail: "Indicación ketoprofeno pct ev vo"
+},
+"ind_analgesia_ketorolaco_pct_ev_vo": {
+    kind: monaco.languages.CompletionItemKind.Snippet,
+    insertText: `Ketorolaco 30mg ev en bolo + paracetamol 500mg 2 comprimidos vo`,
+    detail: "Indicación ketorolaco pct ev vo"
+},
+"ind_ketorolaco_solo": {
+    kind: monaco.languages.CompletionItemKind.Snippet,
+    insertText: `Ketorolaco 30mg ev \${1:cada 8 horas}`,
+    detail: "Indicación ketorolaco solo"},
+"ind_ketoprofeno_solo": {
+    kind: monaco.languages.CompletionItemKind.Snippet,
+    insertText: `Ketoprofeno 100mg ev \${1:cada 8 horas}`,
+    detail: "Indicación ketoprofeno solo"},
+"ind_paracetamol_ev_solo": {
+    kind: monaco.languages.CompletionItemKind.Snippet,
+    insertText: `Paracetamol 1gr ev \${1:cada 8 horas}`,
+    detail: "Indicación paracetamol ev solo"},
+"ind_paracetamol_vo_solo": {
+    kind: monaco.languages.CompletionItemKind.Snippet,
+    insertText: `Paracetamol 500mg 2 comprimidos vo \${1:cada 8 horas}`,
+    detail: "Indicación paracetamol vo solo"},
+"ind_fentanilo_bolo": {
+    kind: monaco.languages.CompletionItemKind.Snippet,
+    insertText: `Fentanilo 0.1mg/2ml administrar \${1:50}mcg en bolo`,
+    detail: "Indicación fentanilo bolo"},
+"ind_diclofenaco_ev": {
+    kind: monaco.languages.CompletionItemKind.Snippet,
+    insertText: `Diclofenaco 75mg ev \${1:cada 8 horas}`,
+    detail: "Indicación diclofenaco ev"},
+"ind_diclofenaco_im": {
+    kind: monaco.languages.CompletionItemKind.Snippet,
+    insertText: `Diclofenaco 75mg im`,
+    detail: "Indicación diclofenaco im"},
+"ind_betametasona_im": {
+    kind: monaco.languages.CompletionItemKind.Snippet,
+    insertText: `Betametasona 4mg im`,
+    detail: "Indicación betametasona im"},
+
+"ind_lorazepam_ev_adulto": {
+    kind: monaco.languages.CompletionItemKind.Snippet,
+    insertText: `Lorazepam 4mg ev`,
+    detail: "Indicación lorazepam ev adulto"},
+
+"ind_sol_salina": {
+    kind: monaco.languages.CompletionItemKind.Snippet,
+    insertText: `Solución salina 0.9%  \${1:250}ml`,
+    detail: "Indicación solución salina 0.9% 250ml"},
+"ind_sol_glucosa": {
+    kind: monaco.languages.CompletionItemKind.Snippet,
+    insertText: `Solución glucosa 5% \${1:250}ml`,
+    detail: "Indicación solución glucosa 5% 250ml"},
+"ind_glucosa_hipoglicemia": {
+    kind: monaco.languages.CompletionItemKind.Snippet,
+    insertText: `Glucosa 30% 20ml administrar 3 ampollas en bolo`,
+    detail: "Indicación glucosa 30% 20ml"},
+"ind_aciclovir_herpes_zoster": {
+    kind: monaco.languages.CompletionItemKind.Snippet,
+    insertText: `Aciclovir 400mg cada 4 horas por 5 veces al día (a las 8, 12, 16, 20 y 24 horas) por 7 días`,
+    detail: "Indicación aciclovir herpes zoster"},
+
+"ind_hospitalizacion": {
+    kind: monaco.languages.CompletionItemKind.Snippet,
+    insertText: `Reposo relativo
+Regimen común a tolerancia
+CSV cada 8 hrs
+O2 pata sat >92% o ante FR >28
+HGT ayuno + precomidas. ICSE SC: 180-220 2 UI, 220-260 4UI, 260-300 6 UI, >300 8 UI  
+SF 0.9% 500cc ...
+- ATB
+- RESCATES
+- TTO CRÓNICO
+Ante agitación psimotora realizar contención: 1ro verbal, 2do física y 3ra farmacológica con \${lorazepam 4mg IM y como segunda linea haloperidol 5mg IM} y referir
+Mantener cuidados por enfermería de S. Foley
+Prevencion LPP. Se beneficia de acompañamiento 24/7
+Exámenes
+Referir a residente SOS`,
+    detail: "Indicaciones hospitalización tipo"
+},
+
+
+"sg_inflamatorios": {
+    kind: monaco.languages.CompletionItemKind.Snippet,
+    insertText: `enrojecimiento, calor, aumento de volumen o secreción purulenta en el sitio`,
+    detail: "Signos de inflamación"},
+
+
 };
 
 export default snippets_basales;
