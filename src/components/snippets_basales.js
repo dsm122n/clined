@@ -951,6 +951,15 @@ Examen Mental:
     kind: monaco.languages.CompletionItemKind.Snippet,
     insertText: `Aciclovir 400mg cada 4 horas por 5 veces al día (a las 8, 12, 16, 20 y 24 horas) por 7 días`,
     detail: "Indicación aciclovir herpes zoster"},
+"ind_amoxi/clav_ambulatorio": {
+    kind: monaco.languages.CompletionItemKind.Snippet,
+    insertText: `Amoxicilina/Clavulánico 875mg/125mg cada 12 horas por \${1:7} días`,
+    detail: "Indicación amoxicilina/clavulánico ambulatorio"},
+"ind_pct_ibuprofeno_pediatrico": {
+    kind: monaco.languages.CompletionItemKind.Snippet,
+    insertText: `- Paracetamol 100mg/ml dar \${1:n}ml cada 8 horas por \${3:5} días
+- Ibuprofeno 200mg/5ml dar \${4:n}ml cada 8 horas por \${6:5} días`,
+    detail: "Indicación ibuprofeno pediátrico"},
 
 "ind_hospitalizacion": {
     kind: monaco.languages.CompletionItemKind.Snippet,
