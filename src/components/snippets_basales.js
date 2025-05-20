@@ -756,51 +756,63 @@ Examen Mental:
 },
 "sos_dolor_toracico": {
     kind: monaco.languages.CompletionItemKind.Snippet,
-    insertText: "Consultar en urgencias en caso de síntomas de alarma tales como: dolor torácico intenso que inicie en reposo o no alivie con reposo, dolor al hombro o mandíbula, dificultad para respirar, sudoración excesiva, mareo o desmayo, otros síntomas que estime deban recibir atención médica de urgencias",
+    insertText: `Consultar en urgencias en caso de síntomas de alarma tales como: dolor torácico intenso que inicie en reposo o no alivie con reposo, dolor al hombro o mandíbula, dificultad para respirar, sudoración excesiva, mareo o desmayo, otros síntomas que estime deban recibir atención médica de urgencias`,
     detail:"banderas rojas dolor torácico"
 },
 "sos_sbo": {
     kind: monaco.languages.CompletionItemKind.Snippet,
-    insterText: "Consultar en urgencias en caso de síntomas de alarma tales como: dificultad respiratoria que no responda a esquema de salbutamol(hundimiento de costillas, silbido de pecho, coloración morada/azulina de labios o piel), rechazo de alimentación, cansancio mayor al alimentarse, fiebre > 38°C que no ceda con paracetamol por más de 3 días, otros síntomas que estime deban recibir atención médica de urgencias.",
+    insertText: `Consultar en urgencias en caso de síntomas de alarma tales como: dificultad respiratoria que no responda a esquema de salbutamol(hundimiento de costillas, silbido de pecho, coloración morada/azulina de labios o piel), rechazo de alimentación, cansancio mayor al alimentarse, fiebre > 38°C que no ceda con paracetamol por más de 3 días, otros síntomas que estime deban recibir atención médica de urgencias.`,
     detail: "banderas rojas SBO"
 }, 
-"tto_virosis_respi_ambulatorio": {
+"tto_virosis_respi_pediatrico": {
     kind: monaco.languages.CompletionItemKind.Snippet,
-    insertText:`1. Reposo en domicilio por \${1:5} días
-2. Régimen saludable a tolerancia, ofrecer líquidos
-3. Seguir tratamiento sintomático:
-    - Paracetamol \${2:10-15 mg/kg/día}ml cada 6 horas por 5 días en caso de fiebre >38°C o dolor, máximo cada 6 hrs.
-        - Paracetamol jarabe 100mg/ml, 160mg/5ml, comprimidos 80,120,160. 
-    - Ibuprofeno \${3:5-10 mg/kg/dosis}ml SOS en caso de fiebre como segunda línea, máximo cada 8 horas
-        - 100mg/ml, 200mg/5ml, comprimidos 400,600. desde los 6 meses, máx 40 mg/Kg/día
-4. Realizar aseo nasal frecuente con solución salina (Fisiolimp, Fisiomar o suero fisiológico) o aspiración nasal.
-5. Prevenir infecciones respiratorias: evitar lugares cerrados con aglomeraciones, evitar contacto con personas enfermas y ventilar el hogar. 
-6. Control en servicio de urgencia en caso de fiebre > 38°C, dificultad respiratoria (quejidos, retracción costal), rechazo alimentario o según necesidad. 
-7. Seguir esquema de vacunación acorde a campañas ministeriales. 
+    insertText:`- Reposo en domicilio por \${1:5} días
+- Régimen saludable a tolerancia, ofrecer líquidos
+- Paracetamol 100mg/ml dar\${2:10-15 mg/kg/día}ml cada 8 horas por 5 días en caso de fiebre >38°C o dolor. Puede aumentar frecuencia a cada 6 hrs.
+- Paracetamol 500mg, 1 comprimido cada 8 horas por 5 días en caso de fiebre >38°C o dolor. Puede aumentar frecuencia a cada 6 hrs.
+- Ibuprofeno 200mg/5ml dar \${3:5-10 mg/kg/dosis}ml SOS en caso de fiebre como segunda línea, máximo cada 8 horas
+- Realizar aseo nasal frecuente con solución salina (Fisiolimp, Fisiomar o suero fisiológico) o aspiración nasal
+- Prevenir infecciones respiratorias: evitar lugares cerrados con aglomeraciones, evitar contacto con personas enfermas y ventilar el hogar. 
+- Consultar en urgencias en caso de síntomas de alarma tales como: dificultad respiratoria que no responda a esquema de salbutamol(hundimiento de costillas, silbido de pecho, coloración morada/azulina de labios o piel), rechazo de alimentación, cansancio mayor al alimentarse, fiebre > 38°C que no alivie con paracetamol por más de 3 días, otros síntomas que estime deban recibir atención médica de urgencias. 
+- Seguir esquema de vacunación acorde a campañas ministeriales. 
 `,
     detail: "Tratamiento virosis respiratoria ambulatorio"
 },
-    "tto_sbo_leve_ambulatorio":{
-            
+    "tto_sbo_adulto_ambulatorio": {
+
     kind: monaco.languages.CompletionItemKind.Snippet,
-    insertText:`1. Reposo en domicilio por \${1:5} días
-    2. Salbutamol 2 puff cada 4-6 horas por 7 días. Evaluar respuesta en 1 día.
-    3. Evitar alergenos y tabaquismo en hogar
-    4. Consultar en urgencias en caso de presentar fiebre > 38°C, dificultad respiratoria (quejidos, retracción costal), rechazo alimentario o según necesidad. `,
+    insertText:`- Reposo en domicilio por \${1:5} días
+- \${1:Salbutamol/Berodual} 2 puff cada 6 horas por 7 días. Evaluar respuesta en 1 día. En caso de dificultad respiratoria franca, administrar 2 puff cada 10 minutos 5 veces, si no mejora consultar en urgencias.
+- Prednisona 20mg, 2 comprimidos en la mañana por 5 días
+- Ante accesos de tos 1 cucharadita de miel. Para alivio sintomático de dolor de garganta puede usar propóleo en spray o pastillas para chupar.
+- Toser, es un mecanismo de defensa para movilizar secreciones, no tomar jarabes para la tos
+- Paracetamol 500mg, 2 comp cada 8 hrs via oral SOS en caso de fiebre o dolor por 5 días. Puede aumentar frecuencia a cada 6 hrs.
+- Diclofenaco 50mg, 1 comp cada 8 hrs via oral SOS en caso de fiebre o dolor a pesar de paracetamol por 5 días. Puede aumentar frecuencia a cada 6 hrs.
+- Evitar alergenos y tabaquismo en hogar
+- Consultar en urgencias en caso de presentar fiebre > 38°C que no alivia con paracetamol/diclofenaco, sensación de ahogo, empeoramiento del cuadro o según necesidad`,
     detail: "Tratamiento SBO leve ambulatorio"
     },
     "tto_sbo_moderado_urgencia": {
         kind: monaco.languages.CompletionItemKind.Snippet,
         insertText: `Esquema abreviado de salbutamol y reevaluar en 1 hora:
-        - 2 puff cada 10 minutos por 5 dosis (< 5 años)
-        - 4 puff cada 20 minutos por 9 dosis (> 5 años)`,
-        detail: "Tratamiento SBO moderado urgencia"
+        - 2 puff cada 10 minutos por 5 dosis (< 5 años)`,
+        detail: "Tratamiento SBO moderado urgencia",
     },
-    "tto_sbo_moderado_recuperado": {
+"tto_sbo_escolar": {
         kind: monaco.languages.CompletionItemKind.Snippet,
-        insertText: `1. Reposo en domicilio por \${1:5} días
-2. Salbutamol 2 puff cada 4-6 horas por 7 días
-3. Prednisona 1 mg/kg/día por 5 días (máx 40 mg/día) por 5 días.`,
+        insertText: `
+- Reposo en domicilio por \${1:5} días
+- prednisona 20mg/5ml, \${2:7.5} ml cada 24 hrs (en la mañana) por 5 dias via oral
+- \${3:Salbutamol} 2 puff cada 6 hrs por 5 dias con aerocamara. En caso de dificultad respiratoria franca, administrar 2 puff cada 10 minutos 5 veces, si no mejora consultar en urgencias.
+- paracetamol 500mg, 1 comprimido cada 8 hrs via oral en caso de fiebre
+- ibuprofeno \${4:200mg/5ml dar nnn ml} cada 8 hrs via oral en caso de fiebre (2da linea), maximo 3 dias
+- hidratacion abundante, ofrecer liquidos constantemente
+- si persiste con fiebre: medidas fisicas y aplicar paños humedos tibios en torax y abdomen
+- refuerzo positivo ante tos, ayuda a movilizar secreciones
+- ante accesos de tos 1 cucharadita de miel. Puede usar propoleo en spray para aliviar dolor de garganta.
+- aseo nasal segun necesidad
+- Consultar en urgencias en caso de síntomas de alarma tales como: dificultad respiratoria que no responda a esquema de salbutamol(hundimiento de costillas, silbido de pecho, coloración morada/azulina de labios o piel), rechazo de alimentación, cansancio mayor al alimentarse, fiebre > 38°C que no alivie con paracetamol por más de 3 días, otros síntomas que estime deban recibir atención médica de urgencias. 
+- Seguir esquema de vacunación acorde a campañas ministeriales. `,
         detail: "Tratamiento SBO moderado recuperado, que se va de alta"},
 
     "tto_sbo_grave_urgencia": {
@@ -816,29 +828,47 @@ Examen Mental:
         kind: monaco.languages.CompletionItemKind.Snippet,
         insertText: `1. Reposo en domicilio por \${1:3} días
 2. Régimen saludable a tolerancia, ofrecer líquidos
-3. Tratamiento antibiótico: Amoxicilina 50mg/kg/día, cada 12 horas por 10 días
-        - Amoxicilina jarabe 125mg/5ml, 250mg/5ml, comprimidos 500mg
-4. Tratamiento sintomático: Paracetamol 10-15 mg/kg/día cada 6 horas por 5 días en caso de fiebre >38°C o dolor, máximo cada 6 hrs.
-        - Paracetamol jarabe 100mg/ml, 160mg/5ml, comprimidos 80,120,160.
+3. Amoxicilina \${2:250ml/5ml 90mg/kg/día}, cada 12 horas por 10 días
+4. Paracetamol 100mg/ml dar \${10-15 mg/kg/día}ml cada 6 horas por 5 días en caso de fiebre >38°C o dolor, máximo cada 6 hrs.
+5. Ibuprofeno 200mg/5ml dar \${5-10 mg/kg/día}ml cada 8 horas por 5 días en caso de fiebre >38°C o dolor, máximo cada 8 hrs.
 5. Control en servicio de urgencia en caso de fiebre > 38°C, dificultad respiratoria (quejidos, retracción costal), rechazo alimentario o según necesidad.`,
-    
         detail: "Tratamiento otitis media aguda"
-        },
-"tto_diarrea_ped": {
+    },
+"tto_gea_ped": {
     kind: monaco.languages.CompletionItemKind.Snippet,
-    insertText: `1. Reposo en domicilio por \${1:5} días. Vuelta a clases el día 
-2. Régimen liviano todo cocido (arroz, fideos, sémola, papas cocidas, pan, carnes magras, pollo, pavo cocido o a la plancha, caldos, postre se sugiere dar manzana cocida o jalea no roja). Evitar inicialmente verduras ricas en fibras como son las de color verde. No consumir golosinas, snacks y frituras. 
-3. Hidratación oral mediante sales de rehidratación oral
-    - vómitos: 4 ml/kg tras cada episodio, max 250 ml
-    - diarrea: 10 ml/kg tras cada episodio, max 250 ml
-    - Pedialyte zinc o Rehsal 60: dar a tomar ml posterior a vómitos o diarrea. Por 5 días
-    - Perenteryl o Enterol S o Vivera en sobres: diluir un sobre en 10 ml de agua (no caliente) y dar cada 12 horas por 5 días
+    insertText: `- Reposo en domicilio por \${1:5} días. Vuelta a clases el día 
+- Régimen bajo en fibra, todo cocido (arroz, fideos, sémola, papas cocidas, pan, carnes magras, pollo, pavo cocido o a la plancha, caldos, postre se sugiere dar manzana cocida o jalea no roja). Evitar inicialmente verduras ricas en fibras como son las de color verde. No consumir golosinas, snacks y frituras. 
+- Hidratación oral mediante sales de rehidratación oral 60mEq/L
+    - vómitos: \${2:4 ml/kg}ml tras cada episodio
+    - diarrea: \${3:10 ml/kg}ml tras cada episodio, max 250 ml
+- Paracetamol 100mg/ml dar \${4:10-15 mg/kg/día}ml cada 6 horas por 5 días en caso de fiebre >38°C o dolor, máximo cada 6 hrs.
+- NO usar antiespasmódicos (por ejemplo Viadil). Ni Domperidona, Ni metoclopramida
+- Consultar en servicio de urgencia si: muy decaído, boca seca, no tolera líquidos (vomita todo), no orina en más de 6 hrs, fiebre > 38°C que no alivie con paracetamol o según necesidad.`,
 
-4. NO consumir bebidas de deportistas (Gatorade, Powerade, etc), bebidas con azúcar o con gas.
-5. NO usar antiespasmódicos (por ejemplo Viadil). Ni Domperidona, Ni metoclopramida 
-6. Recuerde mantener una buena higiene y lavado de manos luego de ir al baño. 
-7. Consultar en servicio de urgencia si: muy decaída, boca seca, no tolera líquidos (vomita todo), no orina en más de 6 hrs, fiebre > 38°C o según necesidad. `,
-    
+        detail: "Tratamiento diarrea"
+    },
+"tto_gea_adulto": {
+    kind: monaco.languages.CompletionItemKind.Snippet,
+    insertText: `- pargeverina-metamizol 5-300mg/ml, 35 gotas cada 8 hrs por 3 dias via oral en caso de dolor abdominal
+- paracetamol 500mg, 2 comp cada 8 hrs via oral en caso de fiebre o dolor abdominal
+- solo si dolor es muy intenso tomar 1 comp de ibuprofeno 400mg por 1 vez (maximo 3 dias). 
+- metoclopramida 10mg, 1 comp cada 8 hrs via oral por 3 días solo en caso de nauseas o vomitos
+- hidratacion abundante, regimen bajo en fibras, todo cocido a tolerancia
+- consultar SOS en urgencia en caso de fiebre persistente a pesar de paracetamol, deposiciones con sangre, dolor intenso, deshidratacion u otros sintomas que estime deban recibir atencion medica de urgencias`,
+        detail: "Tratamiento diarrea"
+    },
+"tto_gea_escolar": {
+    kind: monaco.languages.CompletionItemKind.Snippet,
+    insertText: `- Reposo en domicilio por \${1:5} días. Vuelta a clases el día 
+- Régimen bajo en fibra, todo cocido (arroz, fideos, sémola, papas cocidas, pan, carnes magras, pollo, pavo cocido o a la plancha, caldos, postre se sugiere dar manzana cocida o jalea no roja). Evitar inicialmente verduras ricas en fibras como son las de color verde. No consumir golosinas, snacks y frituras. 
+- Hidratación oral mediante sales de rehidratación oral 60mEq/L
+    - vómitos: \${2:250ml} 20 minutos después de cada episodio
+    - diarrea: \${3:10 ml/kg}ml tras cada episodio, max 250 ml
+- Paracetamol 500mg 1 comprimido cada 8 horas por 5 días en caso de fiebre >38°C o dolor, máximo cada 6 hrs.
+- Puede comprar metamizol 300mg, 1 comprimido cada 8 horas por 5 días en caso de fiebre >38°C o dolor abdominal, máximo cada 6 hrs.
+- NO usar antiespasmódicos (por ejemplo Viadil). Ni Domperidona, Ni metoclopramida
+- Consultar en servicio de urgencia si: fiebre persistente a pesar de paracetamol, deshidratacion, dolor intenso que no alivie con analgesia o en caso de estimarlo necesario`,
+
         detail: "Tratamiento diarrea"
     },
 "tto_migrana": {
@@ -884,6 +914,28 @@ Examen Mental:
 - Consultar en urgencias en caso de síntomas de alarma tales como: dolor de cabeza de inicio súbito para llegar a dolor intenso, fiebre, debilidad muscular, visión borrosa, empeoramiento al acostarse o al toser, sensación de pitido en el oído o disminución de audición, confusión, asimetría facial, si no alivia con medicamentos u otros síntomas que estime deban recibir atención médica de urgencias.`
     ,
     detail: "Tratamiento cefalea tensional"
+},
+"tto_virosis_respi_adulto": {
+    kind: monaco.languages.CompletionItemKind.Snippet,
+    insertText: `- Paracetamol 500mg, 2 comprimidos cada 8 hrs via oral SOS en caso de fiebre o dolor
+- Diclofenaco 50mg, 1 comp cada 8 hrs via oral SOS en caso de fiebre o dolor a pesar de paracetamol, máximo 5 dias
+- Hidratación abundante
+- Ante accesos de tos 1 cucharadita de miel. Para alivio sintomático también puede utilizar propoleo en spray o comprimidos. 
+- Acudir a urgencia en caso de dificultad respiratoria, fiebre persistente que no alivie con paracetamol y diclofenaco, empeoramiento de cuadro u otros síntomas que estime deban recibir atención médica de urgencias. 
+
+- Ibuprofeno 400mg, 1 comp cada 8 hrs via oral en caso de dolor, máximo 5 días`,
+    detail: "Tratamiento virosis respiratoria adulto"
+},
+"tto_virosis_escolar": {
+    kind: monaco.languages.CompletionItemKind.Snippet,
+    insertText: `- paracetamol 500mg, 1 comprimido cada 6 hrs via oral en caso de fiebre o dolor
+- ibuprofeno 200mg/5ml, 8ml cada 8 hrs via oral en caso de fiebre o dolor, max 3 dias
+- Hidratación abundante
+- Ante accesos de tos 1 cucharadita de miel. Para alivio sintomático también puede utilizar propoleo en spray. 
+- Acudir a urgencia en caso de dificultad respiratoria, fiebre persistente que no alivie con paracetamol e ibuprofeno, empeoramiento de cuadro u otros síntomas que estime deban recibir atención médica de urgencias. 
+
+- Ibuprofeno 400mg, 1 comp cada 8 hrs via oral en caso de dolor, máximo 5 días`,
+    detail: "Tratamiento virosis respiratoria escolar"
 },
 
 
