@@ -917,8 +917,8 @@ Examen Mental:
 },
 "tto_virosis_respi_adulto": {
     kind: monaco.languages.CompletionItemKind.Snippet,
-    insertText: `- Paracetamol 500mg, 2 comprimidos cada 8 hrs via oral SOS en caso de fiebre o dolor
-- Diclofenaco 50mg, 1 comp cada 8 hrs via oral SOS en caso de fiebre o dolor a pesar de paracetamol, máximo 5 dias
+    insertText: `- Paracetamol 500mg, 2 comprimidos cada 8 hrs via oral SOS en caso de fiebre o dolor por 3 días
+- Diclofenaco 50mg, 1 comp cada 8 hrs via oral SOS en caso de fiebre o dolor a pesar de paracetamol, máximo 3 días
 - Hidratación abundante
 - Ante accesos de tos 1 cucharadita de miel. Para alivio sintomático también puede utilizar propoleo en spray o comprimidos. 
 - Acudir a urgencia en caso de dificultad respiratoria, fiebre persistente que no alivie con paracetamol y diclofenaco, empeoramiento de cuadro u otros síntomas que estime deban recibir atención médica de urgencias. 
@@ -1013,6 +1013,18 @@ Examen Mental:
 - Ibuprofeno 200mg/5ml dar \${4:n}ml cada 8 horas por \${6:5} días`,
     detail: "Indicación ibuprofeno pediátrico"},
 
+"ind_ibuprofeno_vo":{
+    kind: monaco.languages.CompletionItemKind.Snippet,
+    insertText: `Ibuprofeno 400mg 1 comprimido cada 8 horas por \${6:5} días`,
+    detail: "Indicación ibuprofeno adulto"
+},
+"ind_diclofenaco_vo":{
+    kind: monaco.languages.CompletionItemKind.Snippet,
+    insertText: `diclofenaco 50mg 1 comprimido cada 8 horas por \${6:5} días`,
+    detail: "Indicación diclofenaco adulto"
+},
+
+
 "ind_hospitalizacion": {
     kind: monaco.languages.CompletionItemKind.Snippet,
     insertText: `Reposo relativo
@@ -1024,13 +1036,18 @@ SF 0.9% 500cc ...
 - ATB
 - RESCATES
 - TTO CRÓNICO
-Ante agitación psimotora realizar contención: 1ro verbal, 2do física y 3ra farmacológica con \${lorazepam 4mg IM y como segunda linea haloperidol 5mg IM} y referir
+Ante agitación psimotora realizar contención: 1ro verbal, 2do física y 3ra farmacológica con \${1:haloperidol 2.5mg IM} y referir
 Mantener cuidados por enfermería de S. Foley
 Prevencion LPP. Se beneficia de acompañamiento 24/7
 Exámenes
 Referir a residente SOS`,
     detail: "Indicaciones hospitalización tipo"
 },
+
+"frio_local":{
+    kind: monaco.languages.CompletionItemKind.Snippet,
+    insertText: `frío local por 15 minutos cada 3 horas durante 3-4 días`,
+    detail: "Signos de inflamación"},
 
 
 "sg_inflamatorios": {
