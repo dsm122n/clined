@@ -598,14 +598,6 @@ function App() {
         >
           Atajos teclado (alt+k)
         </button>
-        <a href="https://www.buymeacoffee.com/sanmartindx" target="_blank" rel="noopener noreferrer" style={{ padding: '0px', margin: '0px', height: '40px'}}
-        >
-
-
-            <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style={{ height: '40px', width: 'auto', position: 'static',
-            padding: '0px', margin: '5px 10px 5px 10px'
-             }} id='buy-me-a-coffee' />
-        </a>
       </div>
       <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', width: '100vw', height: 'auto', padding: '0px', margin: '0px' }}>
         { i ? 
