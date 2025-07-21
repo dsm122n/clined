@@ -1,8 +1,3 @@
-# Apóyeme con un cafecito ☕
-
-<a href="https://www.buymeacoffee.com/sanmartindx" target="_blank"
-style="display: flex; justify-content: center; align-items: center; text-decoration: none; color: #FFDD00; font-weight: bold; font-size: 1.5em; margin-bottom: 1em;"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
-
 # Cómo usar ClinEd
 
 [Para ver una demo de las carácterísticas revisa este video](https://youtu.be/bc3fQsSEIjw)
@@ -176,10 +171,6 @@ Para conocer los autocompletados puede presionar **alt+i** o **ctrl+space** en c
 2. Para que ClinEd utilice tu base de datos de autocompletado, debes **pegar el link en el campo de texto verde de la sección superior** y clickear en el botón "✨" que está inmediatamente a la izquierda.
 
 </div>
-
-Si te ha gustado esta herramienta, puedes apoyarme con un cafecito ☕ clickeando en los botones de buy me a coffee en cualquier momento.
-
-<a href="https://www.buymeacoffee.com/sanmartindx" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-blue.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
 # Interesado en el código? 
 

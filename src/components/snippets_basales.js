@@ -238,12 +238,17 @@ const snippets_basales = {
     },
     "ef_normal_sv": {
         kind: monaco.languages.CompletionItemKind.Snippet,
-        insertText: "- SV: T° ${1:num}°C, FC ${2:num} lpm, PA ${3:num}/${4:num} mmHg, FR ${5:num} rpm, SatO2 ${6:num}%\n- Mucosas ${7:hidratadas}, bien perfundida a distal\n- Tórax: ${8:RR2TSS}, ${9:MP(+) SRA}\n- Abdomen: ${10:Depresible}, ${11: indoloro a la palpación, no palpo masas ni visceromegalias}, ${12: sin signos de irritación peritoneal}\n- Extremidades: ${13: sin edema ni signos de trombosis venosa profunda}",
+        insertText: `
+        - SV: T° \${1:num}°C, FC \${2:num} lpm, PA \${3:num}/\${4:num} mmHg, FR \${5:num} rpm, SatO2 \${6:num}%\n- Mucosas \${7:hidratadas}, bien perfundida a distal\n- Tórax: \${8:RR2TSS}, \${9:MP(+) SRA}\n- Abdomen: \${10:Depresible}, \${11: indoloro a la palpación, no palpo masas ni visceromegalias}, \${12: sin signos de irritación peritoneal}\n- Extremidades: \${13: sin edema ni signos de trombosis venosa profunda}`,
         detail: "Examen físico"
     },
     "ef_normal":{
         kind: monaco.languages.CompletionItemKind.Snippet,
-        insertText: "- Mucosas ${7:hidratadas}, bien perfundida a distal\n- Tórax: ${8:RR2TSS}, ${9:MP(+) SRA}\n- Abdomen: ${10:Depresible}, ${11: indoloro a la palpación}, ${12: sin signos de irritación peritoneal}\n- Extremidades: ${13: sin edema ni signos de trombosis venosa profunda}",
+        insertText: `- Mucosas \${7:hidratadas}, llene capilar < 2 seg, tibio a distal
+- Faringe no eritematosa, sin exudado amigdalino, sin desviación de la úvula
+- Tórax: \${8:RR2T no ausculto soplos}, \${9:MP(+) SRA}. Sin uso de musculatura accesoria
+- Abdomen: \${10:Depresible}, \${11: indoloro} a la palpación, \${12: sin signos de irritación peritoneal}. No palpo masas ni visceromegalias. 
+- Extremidades: \${13: sin edema ni signos de trombosis venosa profunda}`,
         detail: "Examen físico"
     },
     "ef_normal_og": {
@@ -264,9 +269,12 @@ const snippets_basales = {
     "ef_neuro_breve_ordenado": {
         kind: monaco.languages.CompletionItemKind.Snippet,
         insertText: `Neurológico: 
-- Pares craneales: Reflejo pupilar presente, simétrico. Campo visual por amenaza conservado. Oculomotilidad conservada. Sin nistagmo. Musculatura facial simétrica, sin parálisis ni paresias. Lengua motilidad conservada, sin desviación. Velo del paladar simétrico. Elevación hombros simétrico.
+- En vigilia espontánea, orientado en tiempo, espacio y persona. Atento. 
+- Lenguaje fluente, nomina, repite y comprende órdenes de 3 comandos.
+- Pares craneales: Pupilas reactivas isocóricas. Campo visual por amenaza conservado. Oculomotilidad conservada. Sin nistagmo espontaneo. Musculatura facial simétrica, sin parálisis ni paresias. Lengua motilidad conservada, sin desviación. Velo del paladar simétrico. Elevación hombros simétrico.
 - Cerebelo: Prueba disdiaquocinesia (-). Romberg (-). Dismetria EESS (-).
-- Fuerza muscular extremidades conservada. Tono muscular conservado. Sensibilidad conservada. Marcha conservada.`,
+- Fuerza muscular extremidades conservada. Tono muscular conservado. Sensibilidad conservada. Marcha conservada.
+- Sin rigidez nucal, Brudzinski y kernig(-)`,
     
             detail: "ex físico neuro breve ordenado"
         },
@@ -320,7 +328,7 @@ const snippets_basales = {
     },
     "ecg_descripcion": {
         kind: monaco.languages.CompletionItemKind.Snippet,
-        insertText: "FC ${1:num} lpm, ritmo sinusal, conducción AV normal (PR ${2:120-200}), conducción interventricular normal (QRS ${3:< 120}ms), eje y amplitud QRS normal, sin alteraciones de repolarización, QTc ${4:340 - 460 ms}\n${5:Recordatorio rangos\n| Parámetro | referencia normal |\n|-|-|\n| 5 cuadritos (cdto)    | 200 ms              |\n| 5 cuadros (cdo)       | 1 s                 |\n| 5cdo x 6 = 30 cdo     | 6 segundos          |\n|               P       | < 0.12 s y < 0.25 mV|\n|               PR      | 120-200 ms          |\n|               QRS     | < 120 ms (3cdto)    |\n|               QT      | < 440 ms (< 1/2 RR anterior)     |\n| QTc (QT ms / sqrt(RR s)) | < 450 ms ♂, < 460ms ♀, >340ms  |}",
+        insertText: "FC ${1:num} lpm, ritmo sinusal, conducción AV normal (PR ${2:120-200}), conducción interventricular normal (QRS ${3:< 120}ms), eje y amplitud QRS normal, sin alteraciones de repolarización, QTc ${4:340 - 460 ms}",
         detail: "descripcion ecg normal"
     },
     "depresion_sn_dsm": {
