@@ -246,10 +246,17 @@ const snippets_basales = {
         kind: monaco.languages.CompletionItemKind.Snippet,
         insertText: `- Mucosas \${7:hidratadas}, llene capilar < 2 seg, tibio a distal
 - Faringe no eritematosa, sin exudado amigdalino, sin desviación de la úvula
+- No palpo adenopatías cervicales ni supraclaviculares
 - Tórax: \${8:RR2T no ausculto soplos}, \${9:MP(+) SRA}. Sin uso de musculatura accesoria
 - Abdomen: \${10:Depresible}, \${11: indoloro} a la palpación, \${12: sin signos de irritación peritoneal}. No palpo masas ni visceromegalias. 
 - Extremidades: \${13: sin edema ni signos de trombosis venosa profunda}`,
         detail: "Examen físico"
+    },
+    "ef_rodillas_normal": {
+        kind: monaco.languages.CompletionItemKind.Snippet,
+        insertText: `- Rodilla derecha: sin deformidades, sin aumento de volumen, sin lesiones cutáneas, sg del témpano (-), sin dolor a la palpación, sin dolor a la flexoextensión activa y pasiva, bostezo lateral (-), bostezo medial (-), cajón anterior (-), cajón posterior (-), McMurray (-), \${1:Apley (-)}, \{2:Thessaly (-)}
+- Rodilla izquierda: sin deformidades, sin aumento de volumen, sin lesiones cutáneas, sg del témpano (-), sin dolor a la palpación, sin dolor a la flexoextensión activa y pasiva, bostezo lateral (-), bostezo medial (-), cajón anterior (-), cajón posterior (-), McMurray (-), \${3:Apley (-)}, \{4:Thessaly (-)}`,
+        detail: "Examen físico rodillas normal"
     },
     "ef_normal_og": {
         kind: monaco.languages.CompletionItemKind.Snippet,
