@@ -2,7 +2,7 @@ import * as monaco from 'monaco-editor'; // library to use monaco editor
 
 const snippets_basales = {
     // Diagnósticos obste
-    'dg_ingreso_egreso_gine': {
+    /* 'dg_ingreso_egreso_gine': {
         kind: monaco.languages.CompletionItemKind.Snippet,
         insertText: [
             `## Diagnósticos ingreso:`,
@@ -17,26 +17,10 @@ const snippets_basales = {
 
         ].join('\n'),
         detail: 'Diagnósticos ingreso y egreso'
-    },
-    'multípara': {
-        kind: monaco.languages.CompletionItemKind.Snippet,
-        insertText: 'multípara de ${1:num}',
-        detail: 'Multípara'
-    },
-    'primípara': {
-        kind: monaco.languages.CompletionItemKind.Snippet,
-        insertText: 'primípara',
-        detail: 'Primípara'
-    },
-    'nulípara': {
-        kind: monaco.languages.CompletionItemKind.Snippet,
-        insertText: 'nulípara',
-        detail: 'Nulípara'
-    
-    },
-
+    }, */
+  
     // síntomas comunes
-    'contracciones_utrinas': {
+/*     'contracciones_utrinas': {
         kind: monaco.languages.CompletionItemKind.Snippet,
         insertText: 'contracciones uterinas dolorosas ${1:cantidad y otros síntomas}',
         detail: 'Contracciones uterinas'
@@ -70,17 +54,9 @@ const snippets_basales = {
         kind: monaco.languages.CompletionItemKind.Snippet,
         insertText: 'náuseas ${1:y} vómitos${2}',
         detail: 'Náuseas y vómitos'
-    },
-    'sin_otras_complicaciones': {
-        kind: monaco.languages.CompletionItemKind.Snippet,
-        insertText: 'sin otras complicaciones',
-        detail: 'Sin otras complicaciones'
-    },
-    
-
-
-
-    // Procedimientos
+    },    
+ */
+/*     // Procedimientos
     'parto_vaginal': {
         kind: monaco.languages.CompletionItemKind.Snippet,
         insertText: [
@@ -94,7 +70,7 @@ const snippets_basales = {
             '- Cesárea (${1:fecha} a las ${2:hora}), sin complicaciones. PN: ${3:num} g, Talla ${4:num} cm, APGAR ${5:num}-${6:num}',
         ].join('\n'),
         detail: 'Cesárea'
-    },
+    }, */
 
     // examenes
     'ex_hemograma': {
