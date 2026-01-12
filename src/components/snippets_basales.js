@@ -97,21 +97,21 @@ const snippets_basales = {
         description: 'Examen función renal',
         detail: 'Función renal'
     },
-    'ex_registro_basal_no_estresante': {
+ /*    'ex_registro_basal_no_estresante': {
         kind: monaco.languages.CompletionItemKind.Snippet,
         insertText: 'Registro basal no estresante: ${1:reactivo}',
         description: 'Examen registro basal no estresante',
         detail: 'Registro basal no estresante'
-    },
-    'ex_ecografia': {
+    }, */
+/*     'ex_ecografia': {
         kind: monaco.languages.CompletionItemKind.Snippet,
         insertText: 'Ecografía: ${1:gestación única viva, presentación cefálica, líquido amniótico normal, placenta anterior}',
         description: 'Examen ecografía',
         detail: 'Ecografía'
-    },
+    }, */
 
     //Resumen
-    'resumen_puerpera': {
+ /*    'resumen_puerpera': {
         kind: monaco.languages.CompletionItemKind.Snippet,
         insertText: [
             'Usuaria de ${1:edad} años, ${2:multípara}, cursando embarazo de ${3:num} semanas por FUR. Consulta al servicio de urgencias por contracciones uterinas dolorosas ${4:cantidad y otros síntomas}. Al examen físico se constata dilatación cervical ${5:num}cm, borramiento ${6:num}%, centrado.',
@@ -120,10 +120,10 @@ const snippets_basales = {
             'Evoluciona ${8:evolución}. Se asiste parto vaginal, finalizando embarazo el ${8:fecha} a las ${9:hora} horas, sin complicaciones. Se recibe recién nacido de sexo ${10:sexo}, Peso ${11:PN} g, Talla ${12:TN} cm, APGAR ${13}-${14}. En puerperio evoluciona con buen manejo del dolor, con loquios hemáticos normales, logrando lactancia materna sin dificultades. Dada evolución favorable, se decide dar alta.',
         ].join('\n'),
         detail: 'Resumen puerpera'
-    },
+    }, */
 
     // combo medicamentos partos 
-    'combo_fco_parto': {
+/*     'combo_fco_parto': {
         kind: monaco.languages.CompletionItemKind.Snippet,
         insertText: [
         '- Paracetamol ${1:1 gr} cada ${2:8 horas} ${3:ev}',
@@ -133,12 +133,12 @@ const snippets_basales = {
         '- Oxitocina según protocolo${8: de inducción}',
         ].join('\n'),
         detail: 'Combo fármacos parto'
-    },
+    }, */
 
     // Fármacos
     'paracetamol_vo': {
         kind: monaco.languages.CompletionItemKind.Snippet,
-        insertText: 'Paracetamol 500mg 2 comprimidos cada 8 horas vía oral por ${1:5} días ${2:en caso de dolor}',
+        insertText: 'Paracetamol 500mg 2 comprimidos cada 8 horas vía oral por ${1:3} días ${2:en caso de dolor}',
         description: 'Indicación paracetamol vía oral',
         detail: 'paracetamol vía oral'
     },
@@ -150,17 +150,8 @@ const snippets_basales = {
     },
 
 
-
-
-    'fcos_uso_habitual': {
-        kind: monaco.languages.CompletionItemKind.Snippet,
-        insertText: 'Reiniciar fármacos de uso habitual${1}',
-        description: 'Indicación fármacos de uso habitual',
-        detail: 'Fármacos de uso habitual'
-    },
-
     // Indicaciones
-    'plantilla_indicaciones_gine': {
+ /*    'plantilla_indicaciones_gine': {
         kind: monaco.languages.CompletionItemKind.Snippet,
         insertText: `
 **Generales**:
@@ -181,30 +172,17 @@ const snippets_basales = {
 3. Consultar en urgencias en caso de síntomas de alarma tales como: \${1:dolor abdominal que no cede con analgesia, sangrado genital abundante, fiebre, dificultad respiratoria, u otros síntomas que estime deban recibir atención médica de urgencias}.
 `,
         detail: 'Plantilla de indicaciones'
-    },
+    }, */
 
-    'reposo_regimen': {
-        kind: monaco.languages.CompletionItemKind.Snippet,
-        insertText: [
-            'Reposo ${1:relativo}',
-            'Régimen ${2:liviano}',
-        ].join('\n'),
-        detail: 'Reposo y régimen alimenticio',        
-    },
-    'control_puerperio':{
+/*     'control_puerperio':{
         kind: monaco.languages.CompletionItemKind.Snippet,
         insertText: [
             'Control${1: de la díada} en ${2:5-7} días con ${3:matrona}, en ${4:CESFAM correspondiente}, agendar hora. ${5:Debe acudir con recién nacido}',
             'En caso de presentar irritabilidad marcada, rechazo a recién nacido, pena persistente o síntomas similares, acudir a su CESFAM para orientación y manejo$6',
         ].join('\n'),
         detail: 'Control y consulta en urgencias'
-    },
-    'sos':{
-        kind: monaco.languages.CompletionItemKind.Snippet,
-        insertText: 'Consultar en urgencias en caso de síntomas de alarma tales como: ${1:dolor abdominal que no cede con analgesia, sangrado genital abundante, fiebre, dificultad respiratoria, u otros síntomas que estime deban recibir atención médica de urgencias}.',
-        description: 'Indicación de consulta en urgencias',
-        detail: 'Consulta sos en urgencias'
-    },
+    }, */
+
 
     // copia del sheets
     "remota": {
@@ -220,12 +198,22 @@ const snippets_basales = {
     },
     "ef_normal":{
         kind: monaco.languages.CompletionItemKind.Snippet,
-        insertText: `- Mucosas \${7:hidratadas}, llene capilar < 2 seg, tibio a distal
+        insertText: `- En vigilia espontanea \${1:, orientado TEP}
+- Mucosas \${7:hidratadas}, llene capilar < 2 seg, tibio a distal
 - Faringe no eritematosa, sin exudado amigdalino, sin desviación de la úvula
 - No palpo adenopatías cervicales ni supraclaviculares
 - Tórax: \${8:RR2T no ausculto soplos}, \${9:MP(+) SRA}. Sin uso de musculatura accesoria
-- Abdomen: \${10:Depresible}, \${11: indoloro} a la palpación, \${12: sin signos de irritación peritoneal}. No palpo masas ni visceromegalias. 
-- Extremidades: \${13: sin edema ni signos de trombosis venosa profunda}`,
+- Abdomen: \${10:Depresible}, \${11: indoloro} a la palpación, blumberg negativo \${12: sin signos de irritación peritoneal}. No palpo masas ni visceromegalias. 
+- Extremidades: \${13: sin edema de EEII ni signos de trombosis venosa profunda}
+
+- Otoscopía: 
+  - CAE conservado sin edema, sin secreción, tímpano nacarado, sin lesiones
+
+Puño percusión negativa
+Rovsing (-), psoas (-), obturador (-), signo del taloneo (-)
+
+- Tranquilo, cooperador, llanto consolable por madre
+`,
         detail: "Examen físico"
     },
     "ef_rodillas_normal": {
@@ -306,12 +294,20 @@ const snippets_basales = {
     },
     "ef_mental": {
         kind: monaco.languages.CompletionItemKind.Snippet,
-        insertText: "- Aspecto general y conducta: ${1:Bien aseado, vestido adecuadamente para la edad y situación, actitud cooperadora}\n- Conciencia: ${2:Alerta, atento y orientado en tiempo, espacio y persona}\n- Psicomotricidad: ${3:Marcha y postura normales, tono muscular adecuado, gesticulación y contacto visual adecuados}\n- Lenguaje: ${4:Espontáneo, velocidad y volumen normales. Notificativo}\n- Pensamiento: ${5:Coherente, lógico, sin ideas delirantes o obsesivas}\n- Sensopercepción: ${6:Sin ilusiones, alucinaciones ni pseudoalucinaciones}\n- Afectividad: ${7:Afecto adecuado, congruente con el contexto, sin labilidad emocional}\n- Nivel Cognitivo: ${8:Capacidad de abstracción y memoria adecuadas, escolaridad completa}\n- Juicio de realidad: ${9:Juicio intacto, buen reconocimiento de la realidad y conducta apropiada}",
+        insertText: `- Aspecto general y conducta: \${1:Bien aseado, vestido adecuadamente para la edad y situación, actitud cooperadora}
+- Conciencia: \${2:Alerta, atento y orientado en tiempo, espacio y persona}
+- Psicomotricidad: \${3:Marcha y postura normales, tono muscular adecuado, gesticulación y contacto visual adecuados}
+- Lenguaje: \${4:Espontáneo, velocidad y volumen normales. Notificativo}
+- Pensamiento: \${5:Coherente, lógico, sin ideas delirantes o obsesivas}
+- Sensopercepción: \${6:Sin ilusiones, alucinaciones ni pseudoalucinaciones}
+- Afectividad: \${7:Afecto adecuado, congruente con el contexto, sin labilidad emocional}
+- Nivel Cognitivo: \${8:Capacidad de abstracción y memoria adecuadas, escolaridad completa}
+- Juicio de realidad: \${9:Juicio intacto, buen reconocimiento de la realidad y conducta apropiada}`,
         detail: "examen mental normal"
     },
     "ecg_descripcion": {
         kind: monaco.languages.CompletionItemKind.Snippet,
-        insertText: "FC ${1:num} lpm, ritmo sinusal, conducción AV normal (PR ${2:120-200}), conducción interventricular normal (QRS ${3:< 120}ms), eje y amplitud QRS normal, sin alteraciones de repolarización, QTc ${4:340 - 460 ms}",
+        insertText: "FC ${1:num} lpm, ritmo sinusal, conducción AV normal (PR ${2:120-200}), QRS ${3:< 120}ms, QRS eje sin desviación, ST sin elevación, onda T sin alteraciones, QTc 440ms",
         detail: "descripcion ecg normal"
     },
     "depresion_sn_dsm": {
@@ -326,7 +322,14 @@ const snippets_basales = {
     },
     "litiasis_tto_medico_expulsivo": {
         kind: monaco.languages.CompletionItemKind.Snippet,
-        insertText: "- Analgesia: ketorolaco 10 mg vía oral cada 8 horas por 5 días\n- Hidratación abundante con agua\n- Tamsulosina 0.4 mg vía oral cada 24 horas por 4 semanas\n- Control en 4 semanas\n- Observar expulsión de cálculo. Control SOS en caso de disminución de dolor asociado a disminución de diuresis",
+        insertText: `- Ibuprofeno 400mg 1 comprimido cada 8 horas por 3 días
+- Paracetamol 500mg 2 comprimidos cada 8 horas por 3 días
+**(- ketorolaco 10 mg vía oral cada 8 horas por 5 días, tendría que comprarlo, tomar en lugar de ibuprofeno, no tomar en conjunto)
+- Hidratación abundante con agua, no tomar bebidas gasificadas
+- Tamsulosina 0.4 mg vía oral cada 24 horas por 4 semanas
+- Acudir a consultorio para control en 4 semanas.
+- Vigilar orina para comprobar expulsión de cálculo. 
+- Acudir a urgencias en caso de dolor intenso que no alivie con analgesia, fiebre, nauseas y vómitos, disminución de orina, o según necesidad`,
         detail: "solo litiasis < 10mm ureter distal, menor a 4 semanas"
     },
     "depresion_plan": {
@@ -334,7 +337,7 @@ const snippets_basales = {
         insertText: "Plan:\n- Consejería breve\n    - Establecer metas pequeñas y alcanzables\n    - Identificar pensamientos negativos y buscar herramientas para interrumpirlos\n    - Recomendación mindfullnes para enfocarse en las sensaciones del momento presente y desconectarse\n    - Planificación del día noche anterior, establecer metas pequeñas y alcanzables. Si no se logra alcanzar metas, usarlo como oportunidad de aprendizaje\n    - Alguien con quien hablar\n- Realizar actividad física, de preferencia ejercicio físico aeróbico\n- Iniciar psicoterapia\n- Tratamiento farmacológico:\n    - Sertralina 50mg/día por 4 días, luego 100mg/día\n    \n    o\n    \n    - Escitalopram 5mg/día por 4 días, luego 10mg/día\n- Control en 2 semanas",
         detail: "plan"
     },
-    "escitalopram": {
+   /*  "escitalopram": {
         kind: monaco.languages.CompletionItemKind.Snippet,
         insertText: "- Escitalopram 10mg, 1/2 comprimido vía oral por 4 días, luego 1 comprimido vía oral por 3 meses",
         detail: "fármaco"
@@ -348,72 +351,19 @@ const snippets_basales = {
         kind: monaco.languages.CompletionItemKind.Snippet,
         insertText: "## Diagnósticos ingreso:\n1. ${1:Multípara de} ${2:num}, ${3:edad} años\n2. Embarazo de ${4:num} semanas por FUR${5:op}\n3. Trabajo de parto fase ${6:activa}\n4. IMC ${7:num}\n5. Riesgo tromboembólico ${8:num}\n## Diagnósticos egreso:\n1. ${9:Multípara de} ${10:num}, ${3:edad} años\n2. Puérpera ${11:2} días ${12:parto vaginal/cesárea}",
         detail: "Diagnósticos ingreso y egreso"
-    },
-    "multípara": {
-        kind: monaco.languages.CompletionItemKind.Snippet,
-        insertText: "multípara de ${1:num}",
-        detail: "Multípara"
-    },
-    "primípara": {
-        kind: monaco.languages.CompletionItemKind.Snippet,
-        insertText: "primípara",
-        detail: "Primípara"
-    },
-    "nulípara": {
-        kind: monaco.languages.CompletionItemKind.Snippet,
-        insertText: "nulípara",
-        detail: "Nulípara"
-    },
-    "contracciones_utrinas": {
-        kind: monaco.languages.CompletionItemKind.Snippet,
-        insertText: "contracciones uterinas dolorosas ${1:cantidad y otros síntomas}",
-        detail: "Contracciones uterinas"
-    },
-    "dilatación_cervical": {
-        kind: monaco.languages.CompletionItemKind.Snippet,
-        insertText: "dilatación cervical ${1:num} cm, borramiento ${2:num}%, centrado",
-        detail: "Dilatación cervical"
-    },
-    "trabajo_parto": {
-        kind: monaco.languages.CompletionItemKind.Snippet,
-        insertText: "trabajo de parto en fase ${1:activa}",
-        detail: "Trabajo de parto"
-    },
+    }, */
+  
     "dolor_abdominal": {
         kind: monaco.languages.CompletionItemKind.Snippet,
         insertText: "dolor abdominal ${1:localización y características}, intensidad ${2:num}",
         detail: "Dolor abdominal"
     },
-    "sangrado_genital": {
-        kind: monaco.languages.CompletionItemKind.Snippet,
-        insertText: "sangrado genital ${1:características}",
-        detail: "Sangrado genital"
-    },
-    "movimientos_fetales": {
-        kind: monaco.languages.CompletionItemKind.Snippet,
-        insertText: "movimientos fetales ${1:num}",
-        detail: "Movimientos fetales"
-    },
-    "nauseas_vomitos": {
-        kind: monaco.languages.CompletionItemKind.Snippet,
-        insertText: "náuseas ${1:y} vómitos${2}",
-        detail: "Náuseas y vómitos"
-    },
-    "sin_otras_complicaciones": {
-        kind: monaco.languages.CompletionItemKind.Snippet,
-        insertText: "sin otras complicaciones",
-        detail: "Sin otras complicaciones"
-    },
-    "parto_vaginal": {
-        kind: monaco.languages.CompletionItemKind.Snippet,
-        insertText: "- Parto vaginal espontáneo (${1:fecha} a las ${2:hora}), sin complicaciones. PN: ${3:num} g, Talla ${4:num} cm, APGAR ${5:num}-${6:num}",
-        detail: "Parto PTVE"
-    },
-    "cesarea": {
+ 
+  /*   "cesarea": {
         kind: monaco.languages.CompletionItemKind.Snippet,
         insertText: "- Cesárea (${1:fecha} a las ${2:hora}), sin complicaciones. PN: ${3:num} g, Talla ${4:num} cm, APGAR ${5:num}-${6:num}",
         detail: "Cesárea"
-    },
+    }, */
     "ex_función_renal": {
         kind: monaco.languages.CompletionItemKind.Snippet,
         insertText: "Creatinina ${1:num}, BUN ${2:num}",
@@ -432,46 +382,13 @@ const snippets_basales = {
         "description": "Examen ecografía",
         detail: "Ecografía"
     },
-    "resumen_puerpera": {
-        kind: monaco.languages.CompletionItemKind.Snippet,
-        insertText: "Usuaria de ${1:edad} años, ${2:multípara}, cursando embarazo de ${3:num} semanas por FUR. Consulta al servicio de urgencias por contracciones uterinas dolorosas ${4:cantidad y otros síntomas}. Al examen físico se constata dilatación cervical ${5:num}cm, borramiento ${6:num}%, centrado.\nSe decide ingreso por ${7:trabajo de parto en fase activa}.\n\nEvoluciona ${8:evolución}. Se asiste parto vaginal, finalizando embarazo el ${8:fecha} a las ${9:hora} horas, sin complicaciones. Se recibe recién nacido de sexo ${10:sexo}, Peso ${11:PN} g, Talla ${12:TN} cm, APGAR ${13}-${14}. En puerperio evoluciona con buen manejo del dolor, con loquios hemáticos normales, logrando lactancia materna sin dificultades. Dada evolución favorable, se decide dar alta.",
-        detail: "Resumen puerpera"
-    },
     "combo_fco_parto": {
         kind: monaco.languages.CompletionItemKind.Snippet,
         insertText: "- Paracetamol ${1:1 gr} cada ${2:8 horas} ${3:ev}\n- Ketoprofeno ${4:100 mg} cada ${5:8 horas} ${6:ev}\n- Ampicilina según protocolo de profilaxis sepsis neonatal\n- Anestesia ${7:peridural}\n- Oxitocina según protocolo${8: de inducción}",
         detail: "Combo fármacos parto"
     },
-    "paracetamol_vo": {
-        kind: monaco.languages.CompletionItemKind.Snippet,
-        insertText: "Paracetamol 1 gr cada 8 horas vía oral por ${1:5} días ${2:en caso de dolor}",
-        "description": "Indicación paracetamol vía oral",
-        detail: "paracetamol vía oral"
-    },
-    "paracetamol_ev": {
-        kind: monaco.languages.CompletionItemKind.Snippet,
-        insertText: "Paracetamol 1 gr cada 8 horas vía endovenosa",
-        "description": "Indicación paracetamol vía endovenosa",
-        detail: "paracetamol vía endovenosa"
-    },
-    "ketoprofeno_vo": {
-        kind: monaco.languages.CompletionItemKind.Snippet,
-        insertText: "Ketoprofeno 50 mg cada 8 horas vía oral por ${1:3} días ${2:en caso de dolor}",
-        "description": "Indicación ketoprofeno vía oral",
-        detail: "ketoprofeno vía oral"
-    },
-    "ketoprofeno_ev": {
-        kind: monaco.languages.CompletionItemKind.Snippet,
-        insertText: "Ketoprofeno 100 mg cada 8 horas vía endovenosa",
-        "description": "Indicación ketoprofeno vía endovenosa",
-        detail: "ketoprofeno vía endovenosa"
-    },
-    "fcos_uso_habitual": {
-        kind: monaco.languages.CompletionItemKind.Snippet,
-        insertText: "Reiniciar fármacos de uso habitual${1}",
-        "description": "Indicación fármacos de uso habitual",
-        detail: "Fármacos de uso habitual"
-    },
+  
+    
     "plantilla_indicaciones_gine": {
         kind: monaco.languages.CompletionItemKind.Snippet,
         insertText: "\n**Generales**:\n1. Reposo relativo\n2. Régimen liviano\n3. Lactancia materna según indicación de pediatría\n4. Abstinencia sexual por 40 días\n5. Aseo genital con agua, no utilizar jabón, secar con toques, no frotar\n\n**Fármacos**:\n  \n1. Paracetamol 1 gr cada 8 horas por 5 días en caso de dolor\n2. Ketoprofeno 50 mg cada 8 horas por 3 días en caso de dolor\n\n**Controles**:\n1. Control en 5-7 días con matrona en su CESFAM, debe acudir con recién nacido y solicitar hora con anticipación\n2. En caso de presentar irritabilidad marcada, rechazo a recién nacido, pena persistente o síntomas similares, acudir a su CESFAM para orientación y manejo.\n3. Consultar en urgencias en caso de síntomas de alarma tales como: ${1:dolor abdominal que no cede con analgesia, sangrado genital abundante, fiebre, dificultad respiratoria, u otros síntomas que estime deban recibir atención médica de urgencias}.\n",
@@ -515,7 +432,7 @@ Antecedentes:
     {
         kind: monaco.languages.CompletionItemKind.Snippet,
         insertText: `Examen físico:
-- \${1:Consciente, orientado, cooperador, reactivo al medio}, llenado capilar < 2 segundos
+- \${1:Consciente, orientado, cooperador, reactivo al medio}, llene capilar < 2 segundos
 - T° \${2:num}°C, FC \${3:num} lpm, FR \${4:num} rpm, SatO2 \${5:num}%
 - Mucosas rosadas e hidratadas, signo del pliegue (-), ojos no hundidos, llanto con lagrimas. 
 - Ojos sin inyección conjuntival
@@ -737,7 +654,10 @@ Examen Mental:
 },
 "sos_lumbago": {
     kind: monaco.languages.CompletionItemKind.Snippet,
-    insertText: `Consultar en urgencias en caso de síntomas de alarma tales como: lumbago con debilidad o adormecimiento en piernas, pérdida de control de esfínteres, fiebre, pérdida de peso, dolor nocturno o que no mejora con el reposo, otros síntomas que estime deban recibir atención médica de urgencias.`,  
+    insertText: `- Mantenerse en movimiento, no realizar reposo absoluto por posibilidad de atrofia de musculatura. 
+- Aplicar compresas tibias en zona lumbar para alivio del dolor cada vez que pueda o sea necesario.
+- Si dolor persiste por más de una semana, pero es tolerable, acudir a consultorio para evaluación por médico para eventual ajuste de analgesia e indicación de kinesioterapia.
+- Consultar en urgencias en caso de síntomas de alarma tales como: lumbago con debilidad o adormecimiento en piernas, pérdida de control de esfínteres, fiebre, pérdida de peso, dolor nocturno o que no mejora con el reposo, otros síntomas que estime deban recibir atención médica de urgencias.`,  
     detail: "banderas rojas lumbago"
 },
 "sos_dolor_abdominal": {
@@ -764,7 +684,7 @@ Examen Mental:
 - Ibuprofeno 200mg/5ml dar \${3:5-10 mg/kg/dosis}ml SOS en caso de fiebre como segunda línea, máximo cada 8 horas
 - Realizar aseo nasal frecuente con solución salina (Fisiolimp, Fisiomar o suero fisiológico) o aspiración nasal
 - Prevenir infecciones respiratorias: evitar lugares cerrados con aglomeraciones, evitar contacto con personas enfermas y ventilar el hogar. 
-- Consultar en urgencias en caso de síntomas de alarma tales como: dificultad respiratoria que no responda a esquema de salbutamol(hundimiento de costillas, silbido de pecho, coloración morada/azulina de labios o piel), rechazo de alimentación, cansancio mayor al alimentarse, fiebre > 38°C que no alivie con paracetamol por más de 3 días, otros síntomas que estime deban recibir atención médica de urgencias. 
+- Consultar en urgencias en caso de síntomas de alarma tales como: dificultad respiratoria (hundimiento de costillas, silbido de pecho, coloración morada/azulina de labios o piel), rechazo de alimentación, cansancio mayor al alimentarse, fiebre > 38°C que no alivie con paracetamol por más de 3 días, otros síntomas que estime deban recibir atención médica de urgencias. 
 - Seguir esquema de vacunación acorde a campañas ministeriales. 
 `,
     detail: "Tratamiento virosis respiratoria ambulatorio"
@@ -827,7 +747,7 @@ Examen Mental:
     },
 "tto_gea_ped": {
     kind: monaco.languages.CompletionItemKind.Snippet,
-    insertText: `- Reposo en domicilio por \${1:5} días. Vuelta a clases el día 
+    insertText: `- Reposo en domicilio por \${1:5} días. 
 - Régimen bajo en fibra, todo cocido (arroz, fideos, sémola, papas cocidas, pan, carnes magras, pollo, pavo cocido o a la plancha, caldos, postre se sugiere dar manzana cocida o jalea no roja). Evitar inicialmente verduras ricas en fibras como son las de color verde. No consumir golosinas, snacks y frituras. 
 - Hidratación oral mediante sales de rehidratación oral 60mEq/L
     - vómitos: \${2:4 ml/kg}ml tras cada episodio
@@ -840,9 +760,11 @@ Examen Mental:
     },
 "tto_gea_adulto": {
     kind: monaco.languages.CompletionItemKind.Snippet,
-    insertText: `- pargeverina-metamizol 5-300mg/ml, 35 gotas cada 8 hrs por 3 dias via oral en caso de dolor abdominal
-- paracetamol 500mg, 2 comp cada 8 hrs via oral en caso de fiebre o dolor abdominal
-- solo si dolor es muy intenso tomar 1 comp de ibuprofeno 400mg por 1 vez (maximo 3 dias). 
+    insertText: `- Viadil compuesto (pargeverina-metamizol 6-300mg/ml), 30 gotas cada 8 o 6 hrs por 3 dias via oral en caso de dolor abdominal
+- paracetamol 500mg, 2 comprimido cada 8 hrs via oral en caso de fiebre o dolor abdominal
+- **(metamizol 300mg, 1 comprimido cada 8 horas por 3 días, tendría que comprarlo, utilizar en caso de dolor a pesar de paracetamol y viadil compuesto)
+- Sales de rehidratación oral 90mEq/L, minimo 1 a 2 L al día
+- Saccharomyces boulardii 250mg cada 12 horas vía oral por 5 días
 - metoclopramida 10mg, 1 comp cada 8 hrs via oral por 3 días solo en caso de nauseas o vomitos
 - hidratacion abundante, regimen bajo en fibras, todo cocido a tolerancia
 - consultar SOS en urgencia en caso de fiebre persistente a pesar de paracetamol, deposiciones con sangre, dolor intenso, deshidratacion u otros sintomas que estime deban recibir atencion medica de urgencias`,
@@ -864,7 +786,28 @@ Examen Mental:
     },
 "tto_migrana": {
     kind: monaco.languages.CompletionItemKind.Snippet,
-    insertText: `(I) Para crisis lo mejor es tomar los medicamentos en dosis adecuadas y lo más temprano posible para evitar que llegue a su máxima intensidad (inclusive antes del dolor si presenta aura). Alternativas de medicamentos:
+    insertText: `    
+- Paracetamol 500mg 2 comprimidos cada 6 horas hasta por 3 días
+- Ibuprofeno 400mg 1 comprimido cada 8 horas por 3 días
+- ***(Naproxeno 550mg 1 comprimido cada 12 horas hasta por 3 días, tendría que comprarlo, tomar en lugar de ibuprofeno)
+- Metoclopramida 10 mg 1 comprimido cada 8 horas por 3 días en caso de nauseas
+- Hidratación abundante
+- Medidas no farmacológicas para prevención: evitar los gatillantes identificados (por ejemplo: estrés, falta de sueño, ayuno prolongado, alcohol, ciertos alimentos como chocolate, quesos curados, embutidos, etc.), mantener una buena hidratación y alimentación regular, realizar ejercicio regularmente y mantener una buena higiene del sueño. Procurar no tomar medicamentos analgésicos de forma excesiva, ya que puede llevar a dolor de cabeza por abuso de medicamentos.
+- Si crisis son muy recurrentes, acudir a consultorio para evaluar requerimiento de tratamiento profiláctico o indicación de otros medicamentos SOS
+- Consultar en urgencias en caso de síntomas de alarma tales como: dolor de cabeza de inicio súbito para llegar a dolor intenso, fiebre, debilidad muscular, visión borrosa, empeoramiento al acostarse o al toser, sensación de pitido en el oído o disminución de audición, confusión, asimetría facial, si no alivia con medicamentos u otros síntomas que estime deban recibir atención médica de urgencias.
+
+- En caso que anti-inflamatorios no esteroidales no suelan aliviar crisis de dolor, otros medicamentos SOS que se pueden utilizar son los triptanes:
+    - Naratriptan 2.5mg: 1 comprimido al inicio de la crisis, se puede repetir dosis a las 4 horas si no ha cedido el dolor.
+        - Inicio de acción más lenta (4 horas), pero efecto más duradero
+        - Avisar si no es efectivo para cambiar a otro triptán
+        - Más barato
+    - Eletriptan 20mg: 1 comprimido al inicio de la crisis.
+        - Inicio de acción más rápido (1-2 horas)
+        - Si no se tiene respuesta, avisar a médico, se puede intentar aumentar dosis SOS en crisis siguientes con 40mg
+        - Más caro
+.....
+
+(I) Para crisis lo mejor es tomar los medicamentos en dosis adecuadas y lo más temprano posible para evitar que llegue a su máxima intensidad (inclusive antes del dolor si presenta aura). Alternativas de medicamentos:
 
 1. Antiinflamatorios no esteroidales (AINEs):
 - ***Naproxeno 550mg: hasta 2 veces al día
@@ -898,9 +841,9 @@ Examen Mental:
 },
 "tto_cefalea_tensional": {
     kind: monaco.languages.CompletionItemKind.Snippet,
-    insertText: `- Paracetamol 500mg 2 comprimidos cada 6 horas hasta por 5 días
-- Diclofenaco 50mg 1 comprimido cada 8 horas hasta por 5 días
-- (Naproxeno 550mg 1 comprimido cada 12 horas hasta por 5 días, tendría que comprarlo)
+    insertText: `- Paracetamol 500mg 2 comprimidos cada 6 horas hasta por 3 días
+- Ibuprofeno 400mg 1 comprimido cada 8 horas por 3 días
+- (Naproxeno 550mg 1 comprimido cada 12 horas hasta por 3 días, tendría que comprarlo, tomar en lugar de ibuprofeno)
 - Hidratación abundante
 - Consultar en urgencias en caso de síntomas de alarma tales como: dolor de cabeza de inicio súbito para llegar a dolor intenso, fiebre, debilidad muscular, visión borrosa, empeoramiento al acostarse o al toser, sensación de pitido en el oído o disminución de audición, confusión, asimetría facial, si no alivia con medicamentos u otros síntomas que estime deban recibir atención médica de urgencias.`
     ,
@@ -935,48 +878,15 @@ Examen Mental:
     insertText: `Ketoprofeno 100mg ev en bolo + paracetamol 500mg 2 comprimidos vo`,
     detail: "Indicación ketoprofeno pct ev vo"
 },
-"ind_analgesia_ketorolaco_pct_ev_vo": {
-    kind: monaco.languages.CompletionItemKind.Snippet,
-    insertText: `Ketorolaco 30mg ev en bolo + paracetamol 500mg 2 comprimidos vo`,
-    detail: "Indicación ketorolaco pct ev vo"
-},
-"ind_ketorolaco_solo": {
-    kind: monaco.languages.CompletionItemKind.Snippet,
-    insertText: `Ketorolaco 30mg ev \${1:cada 8 horas}`,
-    detail: "Indicación ketorolaco solo"},
-"ind_ketoprofeno_solo": {
-    kind: monaco.languages.CompletionItemKind.Snippet,
-    insertText: `Ketoprofeno 100mg ev \${1:cada 8 horas}`,
-    detail: "Indicación ketoprofeno solo"},
-"ind_paracetamol_ev_solo": {
-    kind: monaco.languages.CompletionItemKind.Snippet,
-    insertText: `Paracetamol 1gr ev \${1:cada 8 horas}`,
-    detail: "Indicación paracetamol ev solo"},
-"ind_paracetamol_vo_solo": {
-    kind: monaco.languages.CompletionItemKind.Snippet,
-    insertText: `Paracetamol 500mg 2 comprimidos vo \${1:cada 8 horas}`,
-    detail: "Indicación paracetamol vo solo"},
+
 "ind_fentanilo_bolo": {
     kind: monaco.languages.CompletionItemKind.Snippet,
     insertText: `Fentanilo 0.1mg/2ml administrar \${1:50}mcg en bolo`,
     detail: "Indicación fentanilo bolo"},
-"ind_diclofenaco_ev": {
+"ind_diclo_beta_im": {
     kind: monaco.languages.CompletionItemKind.Snippet,
-    insertText: `Diclofenaco 75mg ev \${1:cada 8 horas}`,
+    insertText: `Diclofenaco 75mg + betametasona 4mg vía IM`,
     detail: "Indicación diclofenaco ev"},
-"ind_diclofenaco_im": {
-    kind: monaco.languages.CompletionItemKind.Snippet,
-    insertText: `Diclofenaco 75mg im`,
-    detail: "Indicación diclofenaco im"},
-"ind_betametasona_im": {
-    kind: monaco.languages.CompletionItemKind.Snippet,
-    insertText: `Betametasona 4mg im`,
-    detail: "Indicación betametasona im"},
-
-"ind_lorazepam_ev_adulto": {
-    kind: monaco.languages.CompletionItemKind.Snippet,
-    insertText: `Lorazepam 4mg ev`,
-    detail: "Indicación lorazepam ev adulto"},
 
 "ind_sol_salina": {
     kind: monaco.languages.CompletionItemKind.Snippet,
@@ -992,7 +902,7 @@ Examen Mental:
     detail: "Indicación glucosa 30% 20ml"},
 "ind_aciclovir_herpes_zoster": {
     kind: monaco.languages.CompletionItemKind.Snippet,
-    insertText: `Aciclovir 400mg cada 4 horas por 5 veces al día (a las 8, 12, 16, 20 y 24 horas) por 7 días`,
+    insertText: `Aciclovir 400mg 2 comprimidos cada 4 horas por 5 veces al día (ej, a las 8, 12, 16, 20 y 24 horas, saltar dosis de la noche) por 7 días`,
     detail: "Indicación aciclovir herpes zoster"},
 "ind_amoxi/clav_ambulatorio": {
     kind: monaco.languages.CompletionItemKind.Snippet,
@@ -1000,19 +910,52 @@ Examen Mental:
     detail: "Indicación amoxicilina/clavulánico ambulatorio"},
 "ind_pct_ibuprofeno_pediatrico": {
     kind: monaco.languages.CompletionItemKind.Snippet,
-    insertText: `- Paracetamol 100mg/ml dar \${1:n}ml cada 8 horas por \${3:5} días
-- Ibuprofeno 200mg/5ml dar \${4:n}ml cada 8 horas por \${6:5} días`,
+    insertText: `- Paracetamol 100mg/ml dar \${1:n}ml cada 8 horas por \${3:3} días
+- Ibuprofeno 200mg/5ml dar \${4:n}ml cada 8 horas por \${6:3} días`,
     detail: "Indicación ibuprofeno pediátrico"},
 
 "ind_ibuprofeno_vo":{
     kind: monaco.languages.CompletionItemKind.Snippet,
-    insertText: `Ibuprofeno 400mg 1 comprimido cada 8 horas por \${6:5} días`,
+    insertText: `Ibuprofeno 400mg 1 comprimido cada 8 horas por \${6:3} días`,
     detail: "Indicación ibuprofeno adulto"
 },
 "ind_diclofenaco_vo":{
     kind: monaco.languages.CompletionItemKind.Snippet,
-    insertText: `diclofenaco 50mg 1 comprimido cada 8 horas por \${6:5} días`,
+    insertText: `diclofenaco 50mg 1 comprimido cada 8 horas por \${6:3} días`,
     detail: "Indicación diclofenaco adulto"
+},
+"ind_tramadol_vo":{
+    kind: monaco.languages.CompletionItemKind.Snippet,
+insertText:`Tramadol 100mg/1ml 24 gotas = 1 ml, tomar 8 gotas cada 8 o máximo cada 6 horas, puede incrementar dosis hasta un máximo de 12 gotas cada 6 horas.`,
+detail:"Indicación tramadol"
+},
+"ind_salbutamol_vo":{
+    kind: monaco.languages.CompletionItemKind.Snippet,
+insertText:`Salbutamol 2 puff cada 6 horas con aerocámara por 7 días, procurar realizar inspiración profunda con cada inhalación`,
+detail:"Indicación salbutamol"
+},
+"ind_berodual_vo":{
+    kind: monaco.languages.CompletionItemKind.Snippet,
+insertText:`B ipratropio/fenoterol (berodual) 2 puff cada 6 horas con aerocámara por 7 días, procurar realizar inspiración profunda con cada inhalación`,
+detail:"Indicación berodual"
+},
+"ind_salmeterol_vo":{
+    kind: monaco.languages.CompletionItemKind.Snippet,
+insertText:`Salmeterol/Fluticasona 25/250 mcg 2 puff cada 12 horas con aerocámara por 7 días, procurar realizar inspiración profunda con cada inhalación`,
+detail:"Indicación berodual"
+},
+"ind_bomba_analgesia_antiemetica_ev":{
+    kind: monaco.languages.CompletionItemKind.Snippet,
+insertText:`Solución salina (NaCl) 0.9% 250 cc + 
+ketoprofeno 100mg +
+ketorolaco 30mg +
+metamizol 1g +
+viadil compuesto (metamizol 2g + pargeverina 5mg) +
+betametasona 4mg +
+metoclopramida 10 mg +
+vía EV
+`,
+detail:"Indicación berodual"
 },
 
 
@@ -1043,8 +986,9 @@ Referir a residente SOS`,
 
 "sg_inflamatorios": {
     kind: monaco.languages.CompletionItemKind.Snippet,
-    insertText: `enrojecimiento, calor, aumento de volumen o secreción purulenta en el sitio`,
+    insertText: `enrojecimiento, calor, aumento de volumen o secreción purulenta en el sitio, fiebre`,
     detail: "Signos de inflamación"},
+
 
 
 };

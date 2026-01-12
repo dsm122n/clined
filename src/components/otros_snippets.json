@@ -172,11 +172,7 @@
         "insertText": "- Parto vaginal espontáneo (${1:fecha} a las ${2:hora}), sin complicaciones. PN: ${3:num} g, Talla ${4:num} cm, APGAR ${5:num}-${6:num}",
         "detail": "Parto PTVE"
     },
-    "cesarea": {
-        "kind": 27,
-        "insertText": "- Cesárea (${1:fecha} a las ${2:hora}), sin complicaciones. PN: ${3:num} g, Talla ${4:num} cm, APGAR ${5:num}-${6:num}",
-        "detail": "Cesárea"
-    },
+
     "ex_función_renal": {
         "kind": 27,
         "insertText": "Creatinina ${1:num}, BUN ${2:num}",
