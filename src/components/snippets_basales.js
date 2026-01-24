@@ -747,12 +747,12 @@ Examen Mental:
     },
 "tto_gea_ped": {
     kind: monaco.languages.CompletionItemKind.Snippet,
-    insertText: `- Reposo en domicilio por \${1:5} días. 
-- Régimen bajo en fibra, todo cocido (arroz, fideos, sémola, papas cocidas, pan, carnes magras, pollo, pavo cocido o a la plancha, caldos, postre se sugiere dar manzana cocida o jalea no roja). Evitar inicialmente verduras ricas en fibras como son las de color verde. No consumir golosinas, snacks y frituras. 
+    insertText: `- Reposo en domicilio por 3 días
+- Régimen bajo en fibra, todo cocido. Evitar verduras crudas altas en fibras como son las de color verde. No consumir golosinas, snacks y frituras. 
 - Hidratación oral mediante sales de rehidratación oral 60mEq/L
     - vómitos: \${2:4 ml/kg}ml tras cada episodio
-    - diarrea: \${3:10 ml/kg}ml tras cada episodio, max 250 ml
-- Paracetamol 100mg/ml dar \${4:10-15 mg/kg/día}ml cada 6 horas por 5 días en caso de fiebre >38°C o dolor, máximo cada 6 hrs.
+    - diarrea: \${3:10 ml/kg}ml tras cada episodio
+- Paracetamol 100mg/ml dar \${4:10-15 mg/kg/día}ml cada 8 horas por 5 días en caso de fiebre >38°C o dolor, máximo cada 6 hrs.
 - NO usar antiespasmódicos (por ejemplo Viadil). Ni Domperidona, Ni metoclopramida
 - Consultar en servicio de urgencia si: muy decaído, boca seca, no tolera líquidos (vomita todo), no orina en más de 6 hrs, fiebre > 38°C que no alivie con paracetamol o según necesidad.`,
 
@@ -855,9 +855,9 @@ Examen Mental:
 - Diclofenaco 50mg, 1 comp cada 8 hrs via oral SOS en caso de fiebre o dolor a pesar de paracetamol, máximo 3 días
 - Hidratación abundante
 - Ante accesos de tos 1 cucharadita de miel. Para alivio sintomático también puede utilizar propoleo en spray o comprimidos. 
-- Acudir a urgencia en caso de dificultad respiratoria, fiebre persistente que no alivie con paracetamol y diclofenaco, empeoramiento de cuadro u otros síntomas que estime deban recibir atención médica de urgencias. 
+- Acudir a urgencia en caso de dificultad respiratoria, fiebre persistente que no alivie con paracetamol, empeoramiento de cuadro u otros síntomas que estime deban recibir atención médica de urgencias. 
 
-- Ibuprofeno 400mg, 1 comp cada 8 hrs via oral en caso de dolor, máximo 5 días`,
+- Ibuprofeno 400mg, 1 comp cada 8 hrs via oral en caso de dolor, máximo 3 días`,
     detail: "Tratamiento virosis respiratoria adulto"
 },
 "tto_virosis_escolar": {
@@ -929,12 +929,12 @@ Examen Mental:
 insertText:`Tramadol 100mg/1ml 24 gotas = 1 ml, tomar 8 gotas cada 8 o máximo cada 6 horas, puede incrementar dosis hasta un máximo de 12 gotas cada 6 horas.`,
 detail:"Indicación tramadol"
 },
-"ind_salbutamol_vo":{
+"ind_salbutamol":{
     kind: monaco.languages.CompletionItemKind.Snippet,
 insertText:`Salbutamol 2 puff cada 6 horas con aerocámara por 7 días, procurar realizar inspiración profunda con cada inhalación`,
 detail:"Indicación salbutamol"
 },
-"ind_berodual_vo":{
+"ind_berodual":{
     kind: monaco.languages.CompletionItemKind.Snippet,
 insertText:`B ipratropio/fenoterol (berodual) 2 puff cada 6 horas con aerocámara por 7 días, procurar realizar inspiración profunda con cada inhalación`,
 detail:"Indicación berodual"
@@ -942,20 +942,25 @@ detail:"Indicación berodual"
 "ind_salmeterol_vo":{
     kind: monaco.languages.CompletionItemKind.Snippet,
 insertText:`Salmeterol/Fluticasona 25/250 mcg 2 puff cada 12 horas con aerocámara por 7 días, procurar realizar inspiración profunda con cada inhalación`,
-detail:"Indicación berodual"
+detail:"Indicación salmeterol"
+},
+"ind_clonixinato_vo":{
+    kind: monaco.languages.CompletionItemKind.Snippet,
+insertText:`Clonixinato de lisina 125 mg 1 comprimido cada 8 horas por 3 días`,
+detail:"Indicación salmeterol"
 },
 "ind_bomba_analgesia_antiemetica_ev":{
     kind: monaco.languages.CompletionItemKind.Snippet,
-insertText:`Solución salina (NaCl) 0.9% 250 cc + 
-ketoprofeno 100mg +
-ketorolaco 30mg +
-metamizol 1g +
-viadil compuesto (metamizol 2g + pargeverina 5mg) +
-betametasona 4mg +
-metoclopramida 10 mg +
+insertText:`Solución salina (NaCl) 0.9% 250 cc 
++ ketoprofeno 100mg 
++ ketorolaco 30mg 
++ metamizol 1g 
++ viadil compuesto (metamizol 2g + pargeverina 5mg) 
++ betametasona 4mg 
++ metoclopramida 10 mg 
 vía EV
 `,
-detail:"Indicación berodual"
+detail:"bomba analgesia genérica"
 },
 
 
@@ -973,6 +978,7 @@ SF 0.9% 500cc ...
 Ante agitación psimotora realizar contención: 1ro verbal, 2do física y 3ra farmacológica con \${1:haloperidol 2.5mg IM} y referir
 Mantener cuidados por enfermería de S. Foley
 Prevencion LPP. Se beneficia de acompañamiento 24/7
+HNF 5000 UI cada 12 horas vía SC
 Exámenes
 Referir a residente SOS`,
     detail: "Indicaciones hospitalización tipo"
@@ -988,8 +994,22 @@ Referir a residente SOS`,
     kind: monaco.languages.CompletionItemKind.Snippet,
     insertText: `enrojecimiento, calor, aumento de volumen o secreción purulenta en el sitio, fiebre`,
     detail: "Signos de inflamación"},
+    
+"ind_esguince_tobillo":{
+    kind: monaco.languages.CompletionItemKind.Snippet,
+    insertText: `
+- Reposo relativo.
+- Reposo deportivo por 2 semanas.
+- Pie en alto en lo posible las primeras 48 horas
+- Uso de tobillera con barras laterales (tipo ASO) para caminar por 5-10 días o según dolor. Retirar durante el día para realizar ejercicios de flexo-extensión de tobillo.
+- Frío local, aplicar varias veces  al día en zonas de mayor dolor, por intervalos de 10 minutos (no aplicar a piel directamente).
+- Paracetamol 500 mg 2 comprimidos cada 8 horas por 3 días
+- Clonixinato de lisina 125 mg 1 comprimido cada 8 horas por 3 días
+- Control en CESFAM en 2 semanas si persiste el dolor o inestabilidad (pedir hora).
+- Consultar a servicio de urgencia en caso de fiebre, dolor intenso a pesar de analgesia o según necesidad.`,
+    detail: "Signos de inflamación"
 
-
+},
 
 };
 
